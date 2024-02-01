@@ -3,11 +3,11 @@
 namespace App\Models;
 use CodeIgniter\Model;
 
-class M_buku extends Model
+class M_produk extends Model
 {		
-	protected $table      = 'buku';
-	protected $primaryKey = 'id_buku';
-	protected $allowedFields = ['judul_buku', 'cover_buku', 'kategori_buku'];
+	protected $table      = 'produk';
+	protected $primaryKey = 'ProdukID';
+	protected $allowedFields = ['NamaProduk', 'Harga', 'Stok'];
 	protected $useSoftDeletes = true;
 	protected $useTimestamps = true;
 
@@ -76,30 +76,6 @@ class M_buku extends Model
         // Query untuk mengambil data stok buku masuk berdasarkan ID
     	$query = $this->db->table('buku_masuk')
     	->where('id_buku_masuk', $id)
-    	->get();
-
-        // Mengembalikan satu baris data stok buku masuk
-    	return $query->getRow();
-    }
-
-	// ----------------------------------- STOK BUKU KELUAR -------------------------------------
-
-    public function getBukuKeluarById($id)
-    {
-    	return $this->db->table('buku_keluar')
-    	->select('buku_keluar.*, buku.*') 
-    	->join('buku', 'buku.id_buku = buku_keluar.buku')
-    	->where('buku.id_buku', $id)
-    	->get()
-    	->getResult();
-    }
-
-
-    public function getBukuKeluarByIdBukuMasuk($id)
-    {
-        // Query untuk mengambil data stok buku masuk berdasarkan ID
-    	$query = $this->db->table('buku_keluar')
-    	->where('id_buku_keluar', $id)
     	->get();
 
         // Mengembalikan satu baris data stok buku masuk

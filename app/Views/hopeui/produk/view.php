@@ -5,7 +5,7 @@
 
             <div class="card-header d-flex justify-content-between">
                <div class="header-title">
-                  <a href="<?=base_url('buku/create')?>" class="btn btn-primary"><i class="faj-button fa-solid fa-plus"></i>Tambah</a>
+                  <a href="<?=base_url('produk/create')?>" class="btn btn-primary"><i class="faj-button fa-solid fa-plus"></i>Tambah</a>
                </div>
             </div>
 
@@ -15,11 +15,9 @@
                      <thead>
                         <tr>
                            <th>No.</th>
-                           <th>Judul Buku</th>
-                           <th>Cover Buku</th>
-                           <th>Kategori Buku</th>
-                           <th>Stok Buku</th>
-                           <!-- <th>File Buku</th> -->
+                           <th>Nama Produk</th>
+                           <th>Harga</th>
+                           <th>Stok</th>
                            <th>Action</th>
                         </tr>
                      </thead>
@@ -28,28 +26,22 @@
                         <?php
                         $no=1;
                         foreach ($jojo as $riz) {
-                         ?>
-                         <tr>
-                          <td><?= $no++ ?></td>
-                          <td><?= $riz->judul_buku ?></td>
-                          <td>
-                            <a href="<?= base_url('cover/' . $riz->cover_buku) ?>" target="_blank">
-                              <img src="<?= base_url('cover/' . $riz->cover_buku) ?>" class="img-fluid" style="object-fit: cover; width: 95px; height: 140px;" alt="Cover Buku">
-                           </a>
-                        </td>
-                        <td><?= $riz->nama_kategori ?></td>
-                        <td><?= $riz->stok_buku ?> buah</td>
-                        <!-- <td><a href="<?= base_url('file_buku/' . $riz->file_buku) ?>" target="_blank">Lihat PDF</a></td> -->
-                        <td>
-                           <a href="<?php echo base_url('buku/menu_stok/'. $riz->id_buku)?>" class="btn btn-success my-1"><i class="fa-regular fa-box-archive" style="color: #ffffff;"></i></a>
-                           
-                           <a href="<?php echo base_url('buku/edit/'. $riz->id_buku)?>" class="btn btn-warning my-1"><i class="fa-solid fa-pen-to-square" style="color: #ffffff;"></i></a>
+                          ?>
+                          <tr>
+                            <td><?= $no++ ?></td>
+                            <td><?= $riz->NamaProduk ?></td>
+                            <td>Rp <?= number_format($riz->Harga, 2, ',', '.') ?></td>
+                            <td><?= $riz->Stok ?> buah</td>
+                            <td>
+                              <a href="<?php echo base_url('produk/menu_stok/'. $riz->ProdukID)?>" class="btn btn-success my-1"><i class="fa-regular fa-box-archive" style="color: #ffffff;"></i></a>
 
-                           <a href="<?php echo base_url('buku/delete/'. $riz->id_buku)?>" class="btn btn-danger my-1"><i class="fa-solid fa-trash"></i></a>
-                        </td>
-                     </tr>
-                  <?php } ?>
-               </tbody>
+                              <a href="<?php echo base_url('produk/edit/'. $riz->ProdukID)?>" class="btn btn-warning my-1"><i class="fa-solid fa-pen-to-square" style="color: #ffffff;"></i></a>
+
+                              <a href="<?php echo base_url('produk/delete/'. $riz->ProdukID)?>" class="btn btn-danger my-1"><i class="fa-solid fa-trash"></i></a>
+                           </td>
+                        </tr>
+                     <?php } ?>
+                  </tbody>
               <!--  <tfoot>
                   <tr>
                      <th>No.</th>
