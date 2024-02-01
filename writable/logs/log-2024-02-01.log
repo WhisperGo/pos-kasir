@@ -1,0 +1,18 @@
+ERROR - 2024-02-01 21:14:20 --> Table 'pos_kasir.kategori_buku' doesn't exist
+CRITICAL - 2024-02-01 21:14:20 --> Call to a member function getResult() on bool
+#0 C:\xampp\htdocs\pos-kasir\app\Controllers\Kategori_buku.php(13): App\Models\M_kategori_buku->tampil('kategori_buku')
+#1 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(832): App\Controllers\Kategori_buku->index()
+#2 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kategori_buku))
+#3 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\pos-kasir\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\pos-kasir\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+ERROR - 2024-02-01 21:17:14 --> Table 'pos_kasir.buku' doesn't exist
+CRITICAL - 2024-02-01 21:17:14 --> Call to a member function getResult() on bool
+#0 C:\xampp\htdocs\pos-kasir\app\Controllers\Buku.php(15): App\Models\M_buku->join2('buku', 'kategori_buku', 'buku.kategori_b...')
+#1 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(832): App\Controllers\Buku->index()
+#2 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Buku))
+#3 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\pos-kasir\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\pos-kasir\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
