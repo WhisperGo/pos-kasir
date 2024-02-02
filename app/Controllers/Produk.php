@@ -128,31 +128,7 @@ class Produk extends BaseController
     }
 
 
-    // --------------------------------- STOK produk MASUK -----------------------------------------
-
-
-    public function menu_stok($id)
-    {
-        if (session()->get('level') == 1 || session()->get('level') == 2) {
-            $model=new M_produk();
-
-            // Mengambil Data Produk masuk berdasarkan id produk
-            $data['jojo'] = $model->getprodukMasukById($id);
-            $data['jojo2'] = $id;
-
-            $data['title'] = 'Data Stok produk';
-            $data['desc'] = 'Anda dapat melihat Stok produk di Menu ini.';      
-            $data['subtitle'] = 'Tambah Stok produk';
-
-            echo view('hopeui/partial/header', $data);
-            echo view('hopeui/partial/side_menu');
-            echo view('hopeui/partial/top_menu');
-            echo view('hopeui/produk/menu_stok', $data);
-            echo view('hopeui/partial/footer');
-        }else {
-            return redirect()->to('/');
-        }
-    }
+    // --------------------------------- STOK PRODUK MASUK -----------------------------------------
 
     public function info_stok_masuk($id)
     {
@@ -160,11 +136,11 @@ class Produk extends BaseController
             $model=new M_produk();
 
             // Mengambil Data Produk masuk berdasarkan id produk
-            $data['jojo'] = $model->getprodukMasukById($id);
+            $data['jojo'] = $model->getProdukMasukById($id);
             $data['jojo2'] = $id;
 
-            $data['title'] = 'Data Stok produk Masuk';
-            $data['desc'] = 'Anda dapat melihat Stok produk Masuk di Menu ini.';      
+            $data['title'] = 'Data Stok Produk Masuk';
+            $data['desc'] = 'Anda dapat melihat Stok Produk Masuk di Menu ini.';      
 
             echo view('hopeui/partial/header', $data);
             echo view('hopeui/partial/side_menu');
@@ -181,12 +157,12 @@ class Produk extends BaseController
         if (session()->get('level') == 1 || session()->get('level') == 2) {
             $model=new M_produk();
 
-            $where=array('id_produk'=>$id);
+            $where=array('ProdukID'=>$id);
             $data['jojo']=$model->getWhere('produk',$where);
 
-            $data['title'] = 'Data Stok produk Masuk';
-            $data['desc'] = 'Anda dapat menambah Stok produk Masuk di Menu ini.';      
-            $data['subtitle'] = 'Tambah Stok produk Masuk';
+            $data['title'] = 'Data Stok Produk Masuk';
+            $data['desc'] = 'Anda dapat menambah Stok Produk Masuk di Menu ini.';      
+            $data['subtitle'] = 'Tambah Stok Produk Masuk';
 
             echo view('hopeui/partial/header', $data);
             echo view('hopeui/partial/side_menu');
@@ -203,11 +179,13 @@ class Produk extends BaseController
         if (session()->get('level') == 1 || session()->get('level') == 2) {
             $a = $this->request->getPost('id');
             $b = $this->request->getPost('stok_produk');
+            $c = session()->get('id');
 
             // Data yang akan disimpan
             $data1 = array(
-                'produk' => $a,
-                'stok_produk_masuk' => $b,
+                'ProdukID' => $a,
+                'Stok_masuk' => $b,
+                'user' => $c,
             );
 
             // Simpan data ke dalam database
@@ -226,11 +204,11 @@ class Produk extends BaseController
             $model = new M_produk();
 
         // Mengambil ID produk terkait dari stok produk masuk yang akan dihapus
-            $stok_masuk = $model->getprodukMasukByIdprodukMasuk($id);
-            $id_produk = $stok_masuk->produk;
+            $stok_masuk = $model->getProdukMasukByIdProdukMasuk($id);
+            $id_produk = $stok_masuk->ProdukID;
 
         // Membuat kondisi untuk menghapus stok produk masuk
-            $where = array('id_produk_masuk' => $id);
+            $where = array('ProdukMasukID' => $id);
             $model->hapus('produk_masuk', $where);
 
         // Mengarahkan kembali ke halaman info_stok dengan ID produk yang diperoleh sebelumnya
@@ -240,95 +218,6 @@ class Produk extends BaseController
             return redirect()->to('/');
         }
     }
-
-    // ---------------------------------- STOK produk KELUAR ---------------------------------------
-
-    public function info_stok_keluar($id)
-    {
-        if (session()->get('level') == 1 || session()->get('level') == 2) {
-            $model=new M_produk();
-
-            // Mengambil Data Produk masuk berdasarkan id produk
-            $data['jojo'] = $model->getprodukKeluarById($id);
-            $data['jojo2'] = $id;
-
-            $data['title'] = 'Data Stok produk Keluar';
-            $data['desc'] = 'Anda dapat melihat Stok produk Keluar di Menu ini.';      
-
-            echo view('hopeui/partial/header', $data);
-            echo view('hopeui/partial/side_menu');
-            echo view('hopeui/partial/top_menu');
-            echo view('hopeui/produk/view_stok_keluar', $data);
-            echo view('hopeui/partial/footer');
-        }else {
-            return redirect()->to('/');
-        }
-    }
-
-    public function add_stok_keluar($id)
-    {
-        if (session()->get('level') == 1 || session()->get('level') == 2) {
-            $model=new M_produk();
-
-            $where=array('id_produk'=>$id);
-            $data['jojo']=$model->getWhere('produk',$where);
-
-            $data['title'] = 'Data Stok produk Keluar';
-            $data['desc'] = 'Anda dapat menambah Stok produk Keluar di Menu ini.';      
-            $data['subtitle'] = 'Tambah Stok produk Keluar';
-
-            echo view('hopeui/partial/header', $data);
-            echo view('hopeui/partial/side_menu');
-            echo view('hopeui/partial/top_menu');
-            echo view('hopeui/produk/add_stok_keluar', $data);
-            echo view('hopeui/partial/footer');
-        }else {
-            return redirect()->to('/');
-        }
-    }
-
-    public function aksi_add_stok_keluar()
-    { 
-        if (session()->get('level') == 1 || session()->get('level') == 2) {
-            $a = $this->request->getPost('id');
-            $b = $this->request->getPost('stok_produk');
-
-            // Data yang akan disimpan
-            $data1 = array(
-                'produk' => $a,
-                'stok_produk_keluar' => $b,
-            );
-
-            // Simpan data ke dalam database
-            $model = new M_produk();
-            $model->simpan('produk_keluar', $data1);
-
-            return redirect()->to('produk/info_stok_keluar/' . $a);
-        } else {
-            return redirect()->to('/');
-        }
-    }
-
-    public function delete_stok_keluar($id)
-    { 
-     if (session()->get('level') == 1 || session()->get('level') == 2) {
-        $model = new M_produk();
-
-        // Mengambil ID produk terkait dari stok produk masuk yang akan dihapus
-        $stok_keluar = $model->getprodukMasukByIdprodukKeluar($id);
-        $id_produk = $stok_keluar->produk;
-
-        // Membuat kondisi untuk menghapus stok produk masuk
-        $where = array('id_produk_keluar' => $id);
-        $model->hapus('produk_keluar', $where);
-
-        // Mengarahkan kembali ke halaman info_stok dengan ID produk yang diperoleh sebelumnya
-            // return redirect()->to('produk');
-        return redirect()->to('produk/info_stok_keluar/' . $id_produk);
-    } else {
-        return redirect()->to('/');
-    }
-}
 
     // -------------------------------------- PEMINJAM --------------------------------------------
 

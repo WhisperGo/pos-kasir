@@ -6,7 +6,7 @@ use Dompdf\Dompdf;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
-class Peminjaman extends BaseController
+class Penjualan extends BaseController
 {
 
     public function index()

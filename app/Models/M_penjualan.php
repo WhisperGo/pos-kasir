@@ -3,11 +3,11 @@
 namespace App\Models;
 use CodeIgniter\Model;
 
-class M_peminjaman extends Model
+class M_penjualan extends Model
 {		
-	protected $table      = 'peminjaman';
-	protected $primaryKey = 'id_peminjaman';
-	protected $allowedFields = ['buku', 'stok_buku', 'user', 'tgl_peminjaman', 'tgl_pengembalian', 'status_peminjaman'];
+	protected $table      = 'penjualan';
+	protected $primaryKey = 'PenjualanID';
+	protected $allowedFields = ['TanggalPenjualan', 'TotalHarga', 'PelangganID'];
 	protected $useSoftDeletes = true;
 	protected $useTimestamps = true;
 

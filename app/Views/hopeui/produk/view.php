@@ -33,7 +33,7 @@
                             <td>Rp <?= number_format($riz->Harga, 2, ',', '.') ?></td>
                             <td><?= $riz->Stok ?> buah</td>
                             <td>
-                              <a href="<?php echo base_url('produk/menu_stok/'. $riz->ProdukID)?>" class="btn btn-success my-1"><i class="fa-regular fa-box-archive" style="color: #ffffff;"></i></a>
+                              <a href="<?php echo base_url('produk/info_stok_masuk/'. $riz->ProdukID)?>" class="btn btn-success my-1"><i class="fa-regular fa-box-archive" style="color: #ffffff;"></i></a>
 
                               <a href="<?php echo base_url('produk/edit/'. $riz->ProdukID)?>" class="btn btn-warning my-1"><i class="fa-solid fa-pen-to-square" style="color: #ffffff;"></i></a>
 

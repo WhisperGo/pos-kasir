@@ -3,11 +3,11 @@
 namespace App\Models;
 use CodeIgniter\Model;
 
-class M_user extends Model
+class M_pelanggan extends Model
 {		
-	protected $table      = 'user';
-	protected $primaryKey = 'id_user';
-	protected $allowedFields = ['username', 'password', 'level', 'foto'];
+	protected $table      = 'pelanggan';
+	protected $primaryKey = 'PelangganID';
+	protected $allowedFields = ['NamaPelanggan', 'Alamat', 'NomorTelepon'];
 	protected $useSoftDeletes = true;
 	protected $useTimestamps = true;
 

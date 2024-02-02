@@ -60,25 +60,25 @@ class M_produk extends Model
 
 	// ----------------------------------- STOK BUKU MASUK -------------------------------------
 
-    public function getBukuMasukById($id)
+    public function getProdukMasukById($id)
     {
-    	return $this->db->table('buku_masuk')
-    	->select('buku_masuk.*, buku.*') 
-    	->join('buku', 'buku.id_buku = buku_masuk.buku')
-    	->where('buku.id_buku', $id)
+    	return $this->db->table('produk_masuk')
+    	->select('produk_masuk.*, produk.*, user.*' )
+    	->select('produk_masuk.created_at AS created_at_produk_masuk')  
+    	->join('produk', 'produk.ProdukID = produk_masuk.ProdukID')
+    	->join('user', 'user.id_user = produk_masuk.user')
+    	->where('produk.ProdukID', $id)
+    	->orderBy('produk_masuk.created_at', 'DESC')
     	->get()
     	->getResult();
     }
 
 
-    public function getBukuMasukByIdBukuMasuk($id)
+    public function getProdukMasukByIdProdukMasuk($id)
     {
-        // Query untuk mengambil data stok buku masuk berdasarkan ID
-    	$query = $this->db->table('buku_masuk')
-    	->where('id_buku_masuk', $id)
+    	$query = $this->db->table('produk_masuk')
+    	->where('ProdukMasukID', $id)
     	->get();
-
-        // Mengembalikan satu baris data stok buku masuk
     	return $query->getRow();
     }
 

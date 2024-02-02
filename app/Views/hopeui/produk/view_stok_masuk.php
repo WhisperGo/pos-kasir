@@ -5,7 +5,7 @@
 
             <div class="card-header d-flex justify-content-between">
                <div class="header-title">
-                  <a href="<?php echo base_url('buku/add_stok_masuk/' . $jojo2)?>" class="btn btn-success my-1"><i class="faj-button fa-regular fa-plus" style="color: #ffffff;"></i>Tambah</a>
+                  <a href="<?= base_url('produk/add_stok_masuk/' . $jojo2)?>" class="btn btn-primary my-1"><i class="faj-button fa-regular fa-plus" style="color: #ffffff;"></i>Tambah</a>
                </div>
             </div>
 
@@ -15,9 +15,11 @@
                      <thead>
                         <tr>
                            <th>No.</th>
-                           <th>Judul Buku</th>
-                           <th>Stok Buku Masuk</th>
+                           <th>Nama Produk</th>
+                           <th>Stok Produk Masuk</th>
                            <th>Tanggal Masuk</th>
+                           <th>Waktu Masuk</th>
+                           <th>User</th>
                            <th>Action</th>
                         </tr>
                      </thead>
@@ -29,13 +31,15 @@
                          ?>
                          <tr>
                           <td><?= $no++ ?></td>
-                          <td><?= $riz->judul_buku ?></td>
-                          <td><?= $riz->stok_buku_masuk ?></td>
-                          <td><?= date('d M Y', strtotime($riz->created_at)) ?></td>
+                          <td><?= $riz->NamaProduk ?></td>
+                          <td><?= $riz->Stok_masuk ?></td>
+                          <td><?= date('d M Y', strtotime($riz->created_at_produk_masuk)) ?></td>
+                          <td><?= date('H:i:s', strtotime($riz->created_at_produk_masuk)) ?></td>
+                          <td><?= $riz->username ?></td>
 
                           <td>
 
-                           <a href="<?php echo base_url('buku/delete_stok_masuk/'. $riz->id_buku_masuk)?>" class="btn btn-danger my-1"><i class="fa-regular fa-minus" style="color: #ffffff;"></i></a>
+                           <a href="<?php echo base_url('produk/delete_stok_masuk/'. $riz->ProdukMasukID)?>" class="btn btn-danger my-1"><i class="fa-regular fa-minus" style="color: #ffffff;"></i></a>
                         </td>
                      </tr>
                   <?php } ?>

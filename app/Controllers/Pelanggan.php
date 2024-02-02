@@ -1,24 +1,23 @@
 <?php
 
 namespace App\Controllers;
-use App\Models\M_user;
+use App\Models\M_pelanggan;
 
 class Pelanggan extends BaseController
 {
     public function index()
     {
         if(session()->get('level')== 1) {
-            $model=new M_user();
-            $on='user.level=level.id_level';
-            $data['jojo']=$model->join2('user', 'level', $on);
+            $model=new M_pelanggan();
+            $data['jojo']=$model->tampil('pelanggan');
 
-            $data['title']='Data User';
-            $data['desc']='Anda dapat melihat Data User di Menu ini.';
+            $data['title']='Data Pelanggan';
+            $data['desc']='Anda dapat melihat Data Pelanggan di Menu ini.';
 
             echo view('hopeui/partial/header', $data);
             echo view('hopeui/partial/side_menu');
             echo view('hopeui/partial/top_menu', $data);
-            echo view('hopeui/user/view', $data);
+            echo view('hopeui/pelanggan/view', $data);
             echo view('hopeui/partial/footer');
         }else {
             return redirect()->to('/');
@@ -29,18 +28,16 @@ class Pelanggan extends BaseController
     public function create()
     {
         if (session()->get('level') == 1) {
-            $model=new M_user();
+            $model=new M_pelanggan();
 
-            $data['title']='Data User';
-            $data['desc']='Anda dapat tambah Data User di Menu ini.'; 
-            $data['subtitle'] = 'Tambah Data User';
-
-            $data['level']=$model->tampil('level');
+            $data['title']='Data Pelanggan';
+            $data['desc']='Anda dapat tambah Data Pelanggan di Menu ini.'; 
+            $data['subtitle'] = 'Tambah Data Pelanggan';
 
             echo view('hopeui/partial/header', $data);
             echo view('hopeui/partial/side_menu');
             echo view('hopeui/partial/top_menu');
-            echo view('hopeui/user/create', $data);
+            echo view('hopeui/pelanggan/create', $data);
             echo view('hopeui/partial/footer');
         }else {
             return redirect()->to('/');
@@ -50,35 +47,22 @@ class Pelanggan extends BaseController
     public function aksi_create()
     { 
         if (session()->get('level') == 1) {
-            $a = $this->request->getPost('username');
-            $b = $this->request->getPost('password');
-            $c = $this->request->getPost('level');
-
-            $foto_profil = $this->request->getFile('foto_profil');
-
-            if ($foto_profil->isValid() && !$foto_profil->hasMoved()) {
-                $ext = $foto_profil->getClientExtension();
-
-                $imageName = 'profile_' . session()->get('id') . '_' . time() . '.' . $ext;
-
-                $foto_profil->move('profile', $imageName);
-            } else {
-                $imageName = 'default.png';
-            }
+            $a = $this->request->getPost('nama_pelanggan');
+            $b = $this->request->getPost('alamat');
+            $c = $this->request->getPost('no_telepon');
 
             // Data yang akan disimpan
             $data1 = array(
-                'username' => $a,
-                'password' => md5($b),
-                'level' => $c,
-                'foto' => $imageName
+                'NamaPelanggan' => $a,
+                'Alamat' => $b,
+                'NomorTelepon' => $c
             );
 
             // Simpan data ke dalam database
-            $model = new M_user();
-            $model->simpan('user', $data1);
+            $model = new M_pelanggan();
+            $model->simpan('pelanggan', $data1);
 
-            return redirect()->to('user');
+            return redirect()->to('pelanggan');
         } else {
             return redirect()->to('/');
         }
@@ -87,20 +71,18 @@ class Pelanggan extends BaseController
     public function edit($id)
     { 
         if (session()->get('level') == 1) {
-            $model=new M_user();
-            $where=array('id_user'=>$id);
-            $data['jojo']=$model->getWhere('user',$where);
+            $model=new M_pelanggan();
+            $where=array('PelangganID'=>$id);
+            $data['jojo']=$model->getWhere('pelanggan',$where);
 
-            $data['title'] = 'Data User';
-            $data['desc'] = 'Anda dapat mengedit Data User di Menu ini.';      
-            $data['subtitle'] = 'Edit Data User';  
-
-            $data['level'] = $model->tampil('level');
+            $data['title'] = 'Data Pelanggan';
+            $data['desc'] = 'Anda dapat mengedit Data Pelanggan di Menu ini.';      
+            $data['subtitle'] = 'Edit Data Pelanggan';  
 
             echo view('hopeui/partial/header', $data);
             echo view('hopeui/partial/side_menu');
             echo view('hopeui/partial/top_menu');
-            echo view('hopeui/user/edit', $data);
+            echo view('hopeui/pelanggan/edit', $data);
             echo view('hopeui/partial/footer');
         }else {
             return redirect()->to('/');
@@ -110,36 +92,24 @@ class Pelanggan extends BaseController
     public function aksi_edit()
     {
         if (session()->get('level') == 1) {
-            $a = $this->request->getPost('username');
-            $b = $this->request->getPost('password');
-            $c = $this->request->getPost('level');
+            $a = $this->request->getPost('nama_pelanggan');
+            $b = $this->request->getPost('alamat');
+            $c = $this->request->getPost('no_telepon');
             $id = $this->request->getPost('id');
-
-            $foto_profil = $this->request->getFile('foto_profil');
-
-            if ($foto_profil->isValid() && !$foto_profil->hasMoved()) {
-                $ext = $foto_profil->getClientExtension();
-
-                $imageName = 'profile_' . $a . '_' . time() . '.' . $ext;
-
-                $foto_profil->move('profile', $imageName);
-            } else {
-                $imageName = $this->request->getPost('old_foto');
-            }
 
             // Data yang akan disimpan
             $data1 = array(
-                'username' => $a,
-                'level' => $c,
-                'foto' => $imageName
+                'NamaPelanggan' => $a,
+                'Alamat' => $b,
+                'NomorTelepon' => $c
             );
 
             // Simpan data ke dalam database
-            $model = new M_user();
-            $where=array('id_user'=>$id);
-            $model->qedit('user', $data1, $where);
+            $model = new M_pelanggan();
+            $where=array('PelangganID'=>$id);
+            $model->qedit('pelanggan', $data1, $where);
 
-            return redirect()->to('user');
+            return redirect()->to('pelanggan');
         } else {
             return redirect()->to('/');
         }
@@ -148,32 +118,12 @@ class Pelanggan extends BaseController
     public function delete($id)
     { 
         if(session()->get('level')== 1) {
-            $model=new M_user();
+            $model=new M_pelanggan();
             $model->deletee($id);
-            return redirect()->to('user');
+            return redirect()->to('pelanggan');
         }else {
             return redirect()->to('/');
         }
     }
-
-    // public function reset_password($id)
-    // {
-    //     if(session()->get('level')== 1) {
-    //         $model=new M_user();
-    //         $where=array('id_user'=>$id);
-    //         $user=array('password'=>md5('12345'));
-    //         $model->qedit('user', $user, $where);
-
-    //         echo view('agendapkl/partial/header_datatable');
-    //         echo view('agendapkl/partial/side_menu');
-    //         echo view('agendapkl/partial/top_menu');
-    //         echo view('agendapkl/partial/footer');
-
-    //         return redirect()->to('agendapkl/user');
-    //     }else {
-    //         return redirect()->to('/');
-
-    //     }
-    // }
 
 }
