@@ -56,6 +56,58 @@ class M_produk extends Model
         ->getResult();
     }
 
+    // ----------------------------------- STOK BUKU MASUK -------------------------------------
+
+    public function getProdukMasukById($id)
+    {
+    	return $this->db->table('produk_masuk')
+    	->select('produk_masuk.*, produk.*, user.*' )
+    	->select('produk_masuk.created_at AS created_at_produk_masuk')  
+    	->join('produk', 'produk.ProdukID = produk_masuk.ProdukID')
+    	->join('user', 'user.id_user = produk_masuk.user')
+    	->where('produk.ProdukID', $id)
+    	->orderBy('produk_masuk.created_at', 'DESC')
+    	->get()
+    	->getResult();
+    }
+
+
+    public function getProdukMasukByIdProdukMasuk($id)
+    {
+    	$query = $this->db->table('produk_masuk')
+    	->where('ProdukMasukID', $id)
+    	->get();
+    	return $query->getRow();
+    }
+
+	// ------------------------------------- PEMINJAM ---------------------------------------------
+
+    public function isLiked($idBuku, $idUser)
+    {
+    	return $this->db->table('koleksi_buku')
+    	->where(['buku' => $idBuku, 'user' => $idUser])
+    	->countAllResults() > 0;
+    }
+
+    public function hapusLike($idBuku, $idUser)
+    {
+    	return $this->db->table('koleksi_buku')
+    	->where(['buku' => $idBuku, 'user' => $idUser])
+    	->delete();
+    }
+
+    public function isLikedByIdUser($idUser)
+    {
+    	return $this->db->table('koleksi_buku')
+    	->select('koleksi_buku.*, buku.*, kategori_buku.*')
+    	->join('buku', 'buku.id_buku = koleksi_buku.buku')
+    	->join('kategori_buku', 'kategori_buku.id_kategori = buku.kategori_buku')
+    	->where('koleksi_buku.user', $idUser)
+    	->where('koleksi_buku.deleted_at', null)
+    	->get()
+    	->getResult();
+    }
+
 	//CI4 Model
     public function deletee($id)
     {

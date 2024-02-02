@@ -29,7 +29,7 @@
                           <td><?= date('d M Y', strtotime($riz->TanggalPenjualan)) ?></td>
                           <td><?= $riz->username ?></td>
                           <td>
-                           <a href="<?php echo base_url('penjualan/detail_penjualan/'. $riz->PenjualanID)?>" class="btn btn-success my-1"><i class="fa-regular fa-circle-info"></i></a>
+                           <a href="<?php echo base_url('detail_penjualan/'. $riz->PenjualanID)?>" class="btn btn-success my-1"><i class="fa-regular fa-circle-info"></i></a>
                            <a href="<?php echo base_url('penjualan/delete/'. $riz->PenjualanID)?>" class="btn btn-danger my-1"><i class="fa-solid fa-trash"></i></a>
                         </td>
                      </tr>
