@@ -3,11 +3,11 @@
 namespace App\Models;
 use CodeIgniter\Model;
 
-class M_produk extends Model
+class M_detail_penjualan extends Model
 {		
-	protected $table      = 'produk';
-	protected $primaryKey = 'ProdukID';
-	protected $allowedFields = ['NamaProduk', 'Harga', 'Stok'];
+	protected $table      = 'detailpenjualan';
+	protected $primaryKey = 'DetailID';
+	protected $allowedFields = ['PenjualanID', 'ProdukID', 'JumlahProduk', 'Subtotal'];
 	protected $useSoftDeletes = true;
 	protected $useTimestamps = true;
 
@@ -41,24 +41,29 @@ class M_produk extends Model
 		->join($table2, $on, 'left')
 		->where("$table1.deleted_at", null)
 		->where("$table2.deleted_at", null)
-        ->where("buku.kategori_buku !=", 10) // Menambahkan kondisi kategori_buku != 10
-        ->get()
-        ->getResult();
-    }
-    public function join2digital($table1, $table2, $on)
+		->where("buku.kategori_buku !=", 10)
+		->orderBy('produk_masuk.created_at', 'DESC')
+		->get()
+		->getResult();
+	}
+
+	public function join3($table1, $table2, $table3, $on, $on2)
 	{
 		return $this->db->table($table1)
 		->join($table2, $on, 'left')
+		->join($table3, $on2, 'left')
 		->where("$table1.deleted_at", null)
 		->where("$table2.deleted_at", null)
-        ->where("buku.kategori_buku =", 10) // Menambahkan kondisi kategori_buku != 10
-        ->get()
-        ->getResult();
-    }
+		->where("$table3.deleted_at", null)
+		->orderBy('penjualan.created_at', 'DESC')
+		->get()
+		->getResult();
+	}
+
 
 	//CI4 Model
-    public function deletee($id)
-    {
-    	return $this->delete($id);
-    }
+	public function deletee($id)
+	{
+		return $this->delete($id);
+	}
 }

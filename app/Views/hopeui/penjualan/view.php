@@ -9,10 +9,10 @@
                      <thead>
                         <tr>
                            <th>No.</th>
-                           <th>Judul Buku</th>
-                           <th>Cover Buku</th>
-                           <th>Kategori Buku</th>
-                           <th>Stok Buku</th>
+                           <th>Nama Pelanggan</th>
+                           <th>Total Harga</th>
+                           <th>Tanggal Penjualan</th>
+                           <th>Kasir</th>
                            <th>Action</th>
                         </tr>
                      </thead>
@@ -21,19 +21,16 @@
                         <?php
                         $no=1;
                         foreach ($jojo as $riz) {
-                          ?>
-                          <tr>
-                            <td><?= $no++ ?></td>
-                            <td><?= $riz->judul_buku ?></td>
-                            <td>
-                             <a href="<?= base_url('cover/' . $riz->cover_buku) ?>" target="_blank">
-                              <img src="<?= base_url('cover/' . $riz->cover_buku) ?>" class="img-fluid" style="object-fit: cover; width: 95px; height: 140px;" alt="Cover Buku">
-                           </a>
-                        </td>
-                        <td><?= $riz->nama_kategori ?></td>
-                        <td><?= $riz->stok_buku ?> buah</td>
-                        <td>
-                           <a href="<?php echo base_url('peminjaman/menu_peminjaman/'. $riz->id_buku)?>" class="btn btn-success my-1"><i class="fa-duotone fa-retweet" style="color: #ffffff;"></i></a>
+                         ?>
+                         <tr>
+                          <td><?= $no++ ?></td>
+                          <td><?= $riz->NamaPelanggan ?></td>
+                          <td>Rp <?= number_format($riz->TotalHarga, 2, ',', '.') ?></td>
+                          <td><?= date('d M Y', strtotime($riz->TanggalPenjualan)) ?></td>
+                          <td><?= $riz->username ?></td>
+                          <td>
+                           <a href="<?php echo base_url('penjualan/detail_penjualan/'. $riz->PenjualanID)?>" class="btn btn-success my-1"><i class="fa-regular fa-circle-info"></i></a>
+                           <a href="<?php echo base_url('penjualan/delete/'. $riz->PenjualanID)?>" class="btn btn-danger my-1"><i class="fa-solid fa-trash"></i></a>
                         </td>
                      </tr>
                   <?php } ?>

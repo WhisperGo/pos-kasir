@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 01 Feb 2024 pada 16.29
+-- Waktu pembuatan: 02 Feb 2024 pada 18.26
 -- Versi server: 10.4.24-MariaDB
 -- Versi PHP: 7.4.29
 
@@ -37,6 +37,22 @@ CREATE TABLE `detailpenjualan` (
   `updated_at` datetime DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Trigger `detailpenjualan`
+--
+DELIMITER $$
+CREATE TRIGGER `hapus` AFTER DELETE ON `detailpenjualan` FOR EACH ROW BEGIN
+UPDATE Produk SET Stok = Stok-old.JumlahProduk WHERE ProdukID=old.ProdukID;
+END
+$$
+DELIMITER ;
+DELIMITER $$
+CREATE TRIGGER `keluar` AFTER INSERT ON `detailpenjualan` FOR EACH ROW BEGIN
+UPDATE produk SET Stok = Stok+new.JumlahProduk WHERE ProdukID=new.ProdukID;
+END
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -81,7 +97,8 @@ CREATE TABLE `pelanggan` (
 --
 
 INSERT INTO `pelanggan` (`PelangganID`, `NamaPelanggan`, `Alamat`, `NomorTelepon`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'Thomas', 'Perumahan Orchid', '084597651452', '2024-02-01 21:32:30', NULL, NULL);
+(1, 'Thomas', 'Perumahan Orchid', '084597651452', '2024-02-01 21:32:30', '2024-02-02 18:15:04', NULL),
+(2, 'Kevin', 'Perumahan Kevin', '08154722', '2024-02-02 20:14:38', '2024-02-02 21:09:58', '2024-02-02 21:09:58');
 
 -- --------------------------------------------------------
 
@@ -94,10 +111,18 @@ CREATE TABLE `penjualan` (
   `TanggalPenjualan` date NOT NULL,
   `TotalHarga` decimal(10,2) NOT NULL,
   `PelangganID` int(11) NOT NULL,
+  `user` int(11) NOT NULL,
   `created_at` datetime NOT NULL DEFAULT current_timestamp(),
   `updated_at` datetime DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `penjualan`
+--
+
+INSERT INTO `penjualan` (`PenjualanID`, `TanggalPenjualan`, `TotalHarga`, `PelangganID`, `user`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, '2024-02-02', '25000.00', 1, 1, '2024-02-02 23:01:20', '2024-02-02 23:39:57', NULL);
 
 -- --------------------------------------------------------
 
@@ -120,8 +145,8 @@ CREATE TABLE `produk` (
 --
 
 INSERT INTO `produk` (`ProdukID`, `NamaProduk`, `Harga`, `Stok`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'Pensil', '2500.00', 10, '2024-02-01 21:20:07', NULL, NULL),
-(2, 'Pena', '2750.00', 10, '2024-02-01 22:08:33', NULL, NULL);
+(1, 'Pensil', '2500.00', 30, '2024-02-01 21:20:07', NULL, NULL),
+(2, 'Pena1', '27502.00', 92, '2024-02-01 22:08:33', '2024-02-01 22:40:35', '2024-02-01 22:40:35');
 
 -- --------------------------------------------------------
 
@@ -133,23 +158,32 @@ CREATE TABLE `produk_masuk` (
   `ProdukMasukID` int(11) NOT NULL,
   `ProdukID` int(11) NOT NULL,
   `Stok_masuk` int(11) NOT NULL,
+  `user` int(11) NOT NULL,
   `created_at` datetime NOT NULL DEFAULT current_timestamp(),
   `updated_at` datetime DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
+-- Dumping data untuk tabel `produk_masuk`
+--
+
+INSERT INTO `produk_masuk` (`ProdukMasukID`, `ProdukID`, `Stok_masuk`, `user`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(3, 1, 10, 1, '2024-02-02 16:49:16', NULL, NULL),
+(4, 1, 10, 1, '2024-02-02 16:58:16', NULL, NULL);
+
+--
 -- Trigger `produk_masuk`
 --
 DELIMITER $$
-CREATE TRIGGER `hapus` AFTER DELETE ON `produk_masuk` FOR EACH ROW BEGIN
-UPDATE Produk SET Stok = Stok-old.Stok_masuk WHERE ProdukID=old.ProdukID;
+CREATE TRIGGER `masuk` BEFORE INSERT ON `produk_masuk` FOR EACH ROW BEGIN
+UPDATE produk SET Stok = Stok+new.Stok_masuk WHERE ProdukID=new.ProdukID;
 END
 $$
 DELIMITER ;
 DELIMITER $$
-CREATE TRIGGER `masuk` AFTER INSERT ON `produk_masuk` FOR EACH ROW BEGIN
-UPDATE produk SET Stok = Stok+new.Stok_masuk WHERE ProdukID=new.ProdukID;
+CREATE TRIGGER `tambah` AFTER DELETE ON `produk_masuk` FOR EACH ROW BEGIN
+UPDATE Produk SET Stok = Stok-old.Stok_masuk WHERE ProdukID=old.ProdukID;
 END
 $$
 DELIMITER ;
@@ -281,13 +315,13 @@ ALTER TABLE `level`
 -- AUTO_INCREMENT untuk tabel `pelanggan`
 --
 ALTER TABLE `pelanggan`
-  MODIFY `PelangganID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `PelangganID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `penjualan`
 --
 ALTER TABLE `penjualan`
-  MODIFY `PenjualanID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `PenjualanID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `produk`
@@ -299,7 +333,7 @@ ALTER TABLE `produk`
 -- AUTO_INCREMENT untuk tabel `produk_masuk`
 --
 ALTER TABLE `produk_masuk`
-  MODIFY `ProdukMasukID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ProdukMasukID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`

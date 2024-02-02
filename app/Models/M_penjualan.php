@@ -41,66 +41,29 @@ class M_penjualan extends Model
 		->join($table2, $on, 'left')
 		->where("$table1.deleted_at", null)
 		->where("$table2.deleted_at", null)
-        ->where("buku.kategori_buku !=", 10) // Menambahkan kondisi kategori_buku != 10
-        ->get()
-        ->getResult();
-    }
+		->where("buku.kategori_buku !=", 10)
+		->orderBy('produk_masuk.created_at', 'DESC')
+		->get()
+		->getResult();
+	}
 
+	public function join3($table1, $table2, $table3, $on, $on2)
+	{
+		return $this->db->table($table1)
+		->join($table2, $on, 'left')
+		->join($table3, $on2, 'left')
+		->where("$table1.deleted_at", null)
+		->where("$table2.deleted_at", null)
+		->where("$table3.deleted_at", null)
+		->orderBy('penjualan.created_at', 'DESC')
+		->get()
+		->getResult();
+	}
 
-	// ----------------------------------- PEMINJAMAN -------------------------------------
-
-    public function getPeminjamanById($id)
-    {
-    	return $this->db->table('peminjaman')
-    	->select('peminjaman.*, buku.*, user.*') 
-    	->select('peminjaman.stok_buku AS stok_buku_peminjaman') 
-    	->join('buku', 'buku.id_buku = peminjaman.buku')
-    	->join('user', 'user.id_user = peminjaman.user')
-    	->where('peminjaman.buku', $id)
-    	->where('peminjaman.deleted_at', null)
-    	->orderBy('peminjaman.created_at', 'DESC')
-    	->get()
-    	->getResult();
-    }
-
-    public function getBukuByIdPeminjaman($id)
-    {
-        // Query untuk mengambil data stok buku masuk berdasarkan ID
-    	$query = $this->db->table('peminjaman')
-    	->where('id_peminjaman', $id)
-    	->get();
-
-        // Mengembalikan satu baris data stok buku masuk
-    	return $query->getRow();
-    }
-
-    public function getAllPeminjamanInRange($tanggal_awal, $tanggal_akhir)
-    {
-    	return $this->db->table('peminjaman')
-    	->select('peminjaman.*, buku.*, user.*') 
-    	->select('peminjaman.stok_buku AS stok_buku_peminjaman') 
-    	->join('buku', 'buku.id_buku = peminjaman.buku')
-    	->join('user', 'user.id_user = peminjaman.user')
-    	->where('peminjaman.tgl_peminjaman >=', $tanggal_awal)
-    	->where('peminjaman.tgl_peminjaman <=', $tanggal_akhir)
-    	->where('peminjaman.deleted_at', null)
-    	->orderBy('peminjaman.created_at', 'DESC')
-    	->get()
-    	->getResult();
-    }
-
-    public function countPeminjamanByStatus($awal, $akhir, $status)
-    {
-    	return $this->db->table('peminjaman')
-    	->where('tgl_peminjaman >=', $awal)
-    	->where('tgl_peminjaman <=', $akhir)
-    	->where('status_peminjaman', $status)
-    	->countAllResults();
-    }
 
 	//CI4 Model
-    public function deletee($id)
-    {
-    	return $this->delete($id);
-    }
+	public function deletee($id)
+	{
+		return $this->delete($id);
+	}
 }

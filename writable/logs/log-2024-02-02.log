@@ -65,3 +65,218 @@ CRITICAL - 2024-02-02 20:13:01 --> Call to a member function isValid() on null
 #3 C:\xampp\htdocs\pos-kasir\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #4 C:\xampp\htdocs\pos-kasir\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
 #5 {main}
+CRITICAL - 2024-02-02 23:04:33 --> Class 'App\Models\M_peminjaman' not found
+#0 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(832): App\Controllers\Penjualan->index()
+#1 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+#2 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\pos-kasir\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\pos-kasir\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2024-02-02 23:04:51 --> Too few arguments to function App\Models\M_penjualan::join2(), 1 passed in C:\xampp\htdocs\pos-kasir\app\Controllers\Penjualan.php on line 17 and exactly 3 expected
+#0 C:\xampp\htdocs\pos-kasir\app\Controllers\Penjualan.php(17): App\Models\M_penjualan->join2('penjualan')
+#1 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(832): App\Controllers\Penjualan->index()
+#2 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+#3 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\pos-kasir\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\pos-kasir\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2024-02-02 23:04:52 --> Too few arguments to function App\Models\M_penjualan::join2(), 1 passed in C:\xampp\htdocs\pos-kasir\app\Controllers\Penjualan.php on line 17 and exactly 3 expected
+#0 C:\xampp\htdocs\pos-kasir\app\Controllers\Penjualan.php(17): App\Models\M_penjualan->join2('penjualan')
+#1 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(832): App\Controllers\Penjualan->index()
+#2 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+#3 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\pos-kasir\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\pos-kasir\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2024-02-02 23:04:53 --> Too few arguments to function App\Models\M_penjualan::join2(), 1 passed in C:\xampp\htdocs\pos-kasir\app\Controllers\Penjualan.php on line 17 and exactly 3 expected
+#0 C:\xampp\htdocs\pos-kasir\app\Controllers\Penjualan.php(17): App\Models\M_penjualan->join2('penjualan')
+#1 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(832): App\Controllers\Penjualan->index()
+#2 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+#3 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\pos-kasir\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\pos-kasir\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2024-02-02 23:04:53 --> Too few arguments to function App\Models\M_penjualan::join2(), 1 passed in C:\xampp\htdocs\pos-kasir\app\Controllers\Penjualan.php on line 17 and exactly 3 expected
+#0 C:\xampp\htdocs\pos-kasir\app\Controllers\Penjualan.php(17): App\Models\M_penjualan->join2('penjualan')
+#1 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(832): App\Controllers\Penjualan->index()
+#2 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+#3 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\pos-kasir\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\pos-kasir\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2024-02-02 23:04:53 --> Too few arguments to function App\Models\M_penjualan::join2(), 1 passed in C:\xampp\htdocs\pos-kasir\app\Controllers\Penjualan.php on line 17 and exactly 3 expected
+#0 C:\xampp\htdocs\pos-kasir\app\Controllers\Penjualan.php(17): App\Models\M_penjualan->join2('penjualan')
+#1 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(832): App\Controllers\Penjualan->index()
+#2 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+#3 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\pos-kasir\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\pos-kasir\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2024-02-02 23:04:54 --> Too few arguments to function App\Models\M_penjualan::join2(), 1 passed in C:\xampp\htdocs\pos-kasir\app\Controllers\Penjualan.php on line 17 and exactly 3 expected
+#0 C:\xampp\htdocs\pos-kasir\app\Controllers\Penjualan.php(17): App\Models\M_penjualan->join2('penjualan')
+#1 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(832): App\Controllers\Penjualan->index()
+#2 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+#3 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\pos-kasir\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\pos-kasir\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2024-02-02 23:04:54 --> Too few arguments to function App\Models\M_penjualan::join2(), 1 passed in C:\xampp\htdocs\pos-kasir\app\Controllers\Penjualan.php on line 17 and exactly 3 expected
+#0 C:\xampp\htdocs\pos-kasir\app\Controllers\Penjualan.php(17): App\Models\M_penjualan->join2('penjualan')
+#1 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(832): App\Controllers\Penjualan->index()
+#2 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+#3 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\pos-kasir\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\pos-kasir\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2024-02-02 23:04:54 --> Too few arguments to function App\Models\M_penjualan::join2(), 1 passed in C:\xampp\htdocs\pos-kasir\app\Controllers\Penjualan.php on line 17 and exactly 3 expected
+#0 C:\xampp\htdocs\pos-kasir\app\Controllers\Penjualan.php(17): App\Models\M_penjualan->join2('penjualan')
+#1 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(832): App\Controllers\Penjualan->index()
+#2 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+#3 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\pos-kasir\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\pos-kasir\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2024-02-02 23:04:54 --> Too few arguments to function App\Models\M_penjualan::join2(), 1 passed in C:\xampp\htdocs\pos-kasir\app\Controllers\Penjualan.php on line 17 and exactly 3 expected
+#0 C:\xampp\htdocs\pos-kasir\app\Controllers\Penjualan.php(17): App\Models\M_penjualan->join2('penjualan')
+#1 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(832): App\Controllers\Penjualan->index()
+#2 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+#3 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\pos-kasir\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\pos-kasir\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2024-02-02 23:04:54 --> Too few arguments to function App\Models\M_penjualan::join2(), 1 passed in C:\xampp\htdocs\pos-kasir\app\Controllers\Penjualan.php on line 17 and exactly 3 expected
+#0 C:\xampp\htdocs\pos-kasir\app\Controllers\Penjualan.php(17): App\Models\M_penjualan->join2('penjualan')
+#1 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(832): App\Controllers\Penjualan->index()
+#2 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+#3 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\pos-kasir\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\pos-kasir\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2024-02-02 23:04:55 --> Too few arguments to function App\Models\M_penjualan::join2(), 1 passed in C:\xampp\htdocs\pos-kasir\app\Controllers\Penjualan.php on line 17 and exactly 3 expected
+#0 C:\xampp\htdocs\pos-kasir\app\Controllers\Penjualan.php(17): App\Models\M_penjualan->join2('penjualan')
+#1 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(832): App\Controllers\Penjualan->index()
+#2 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+#3 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\pos-kasir\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\pos-kasir\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2024-02-02 23:04:55 --> Too few arguments to function App\Models\M_penjualan::join2(), 1 passed in C:\xampp\htdocs\pos-kasir\app\Controllers\Penjualan.php on line 17 and exactly 3 expected
+#0 C:\xampp\htdocs\pos-kasir\app\Controllers\Penjualan.php(17): App\Models\M_penjualan->join2('penjualan')
+#1 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(832): App\Controllers\Penjualan->index()
+#2 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+#3 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\pos-kasir\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\pos-kasir\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2024-02-02 23:04:55 --> Too few arguments to function App\Models\M_penjualan::join2(), 1 passed in C:\xampp\htdocs\pos-kasir\app\Controllers\Penjualan.php on line 17 and exactly 3 expected
+#0 C:\xampp\htdocs\pos-kasir\app\Controllers\Penjualan.php(17): App\Models\M_penjualan->join2('penjualan')
+#1 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(832): App\Controllers\Penjualan->index()
+#2 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+#3 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\pos-kasir\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\pos-kasir\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2024-02-02 23:04:55 --> Too few arguments to function App\Models\M_penjualan::join2(), 1 passed in C:\xampp\htdocs\pos-kasir\app\Controllers\Penjualan.php on line 17 and exactly 3 expected
+#0 C:\xampp\htdocs\pos-kasir\app\Controllers\Penjualan.php(17): App\Models\M_penjualan->join2('penjualan')
+#1 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(832): App\Controllers\Penjualan->index()
+#2 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+#3 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\pos-kasir\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\pos-kasir\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2024-02-02 23:04:56 --> Too few arguments to function App\Models\M_penjualan::join2(), 1 passed in C:\xampp\htdocs\pos-kasir\app\Controllers\Penjualan.php on line 17 and exactly 3 expected
+#0 C:\xampp\htdocs\pos-kasir\app\Controllers\Penjualan.php(17): App\Models\M_penjualan->join2('penjualan')
+#1 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(832): App\Controllers\Penjualan->index()
+#2 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+#3 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\pos-kasir\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\pos-kasir\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2024-02-02 23:04:56 --> Too few arguments to function App\Models\M_penjualan::join2(), 1 passed in C:\xampp\htdocs\pos-kasir\app\Controllers\Penjualan.php on line 17 and exactly 3 expected
+#0 C:\xampp\htdocs\pos-kasir\app\Controllers\Penjualan.php(17): App\Models\M_penjualan->join2('penjualan')
+#1 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(832): App\Controllers\Penjualan->index()
+#2 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+#3 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\pos-kasir\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\pos-kasir\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2024-02-02 23:04:56 --> Too few arguments to function App\Models\M_penjualan::join2(), 1 passed in C:\xampp\htdocs\pos-kasir\app\Controllers\Penjualan.php on line 17 and exactly 3 expected
+#0 C:\xampp\htdocs\pos-kasir\app\Controllers\Penjualan.php(17): App\Models\M_penjualan->join2('penjualan')
+#1 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(832): App\Controllers\Penjualan->index()
+#2 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+#3 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\pos-kasir\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\pos-kasir\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2024-02-02 23:04:56 --> Too few arguments to function App\Models\M_penjualan::join2(), 1 passed in C:\xampp\htdocs\pos-kasir\app\Controllers\Penjualan.php on line 17 and exactly 3 expected
+#0 C:\xampp\htdocs\pos-kasir\app\Controllers\Penjualan.php(17): App\Models\M_penjualan->join2('penjualan')
+#1 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(832): App\Controllers\Penjualan->index()
+#2 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+#3 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\pos-kasir\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\pos-kasir\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2024-02-02 23:04:56 --> Too few arguments to function App\Models\M_penjualan::join2(), 1 passed in C:\xampp\htdocs\pos-kasir\app\Controllers\Penjualan.php on line 17 and exactly 3 expected
+#0 C:\xampp\htdocs\pos-kasir\app\Controllers\Penjualan.php(17): App\Models\M_penjualan->join2('penjualan')
+#1 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(832): App\Controllers\Penjualan->index()
+#2 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+#3 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\pos-kasir\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\pos-kasir\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2024-02-02 23:04:57 --> Too few arguments to function App\Models\M_penjualan::join2(), 1 passed in C:\xampp\htdocs\pos-kasir\app\Controllers\Penjualan.php on line 17 and exactly 3 expected
+#0 C:\xampp\htdocs\pos-kasir\app\Controllers\Penjualan.php(17): App\Models\M_penjualan->join2('penjualan')
+#1 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(832): App\Controllers\Penjualan->index()
+#2 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+#3 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\pos-kasir\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\pos-kasir\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2024-02-02 23:04:57 --> Too few arguments to function App\Models\M_penjualan::join2(), 1 passed in C:\xampp\htdocs\pos-kasir\app\Controllers\Penjualan.php on line 17 and exactly 3 expected
+#0 C:\xampp\htdocs\pos-kasir\app\Controllers\Penjualan.php(17): App\Models\M_penjualan->join2('penjualan')
+#1 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(832): App\Controllers\Penjualan->index()
+#2 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+#3 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\pos-kasir\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\pos-kasir\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2024-02-02 23:04:57 --> Too few arguments to function App\Models\M_penjualan::join2(), 1 passed in C:\xampp\htdocs\pos-kasir\app\Controllers\Penjualan.php on line 17 and exactly 3 expected
+#0 C:\xampp\htdocs\pos-kasir\app\Controllers\Penjualan.php(17): App\Models\M_penjualan->join2('penjualan')
+#1 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(832): App\Controllers\Penjualan->index()
+#2 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+#3 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\pos-kasir\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\pos-kasir\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2024-02-02 23:04:58 --> Too few arguments to function App\Models\M_penjualan::join2(), 1 passed in C:\xampp\htdocs\pos-kasir\app\Controllers\Penjualan.php on line 17 and exactly 3 expected
+#0 C:\xampp\htdocs\pos-kasir\app\Controllers\Penjualan.php(17): App\Models\M_penjualan->join2('penjualan')
+#1 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(832): App\Controllers\Penjualan->index()
+#2 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+#3 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\pos-kasir\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\pos-kasir\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2024-02-02 23:24:12 --> Too few arguments to function App\Models\M_penjualan::join2(), 1 passed in C:\xampp\htdocs\pos-kasir\app\Controllers\Penjualan.php on line 17 and exactly 3 expected
+#0 C:\xampp\htdocs\pos-kasir\app\Controllers\Penjualan.php(17): App\Models\M_penjualan->join2('penjualan')
+#1 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(832): App\Controllers\Penjualan->index()
+#2 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+#3 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\pos-kasir\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\pos-kasir\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2024-02-02 23:24:52 --> Too few arguments to function App\Models\M_penjualan::join2(), 1 passed in C:\xampp\htdocs\pos-kasir\app\Controllers\Penjualan.php on line 17 and exactly 3 expected
+#0 C:\xampp\htdocs\pos-kasir\app\Controllers\Penjualan.php(17): App\Models\M_penjualan->join2('penjualan')
+#1 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(832): App\Controllers\Penjualan->index()
+#2 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+#3 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\pos-kasir\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\pos-kasir\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2024-02-02 23:56:16 --> Call to undefined method App\Models\M_penjualan::getPeminjamanById
+#0 C:\xampp\htdocs\pos-kasir\app\Controllers\Penjualan.php(40): CodeIgniter\Model->__call('getPeminjamanBy...', Array)
+#1 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(832): App\Controllers\Penjualan->detail_penjualan('1')
+#2 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+#3 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\pos-kasir\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\pos-kasir\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}

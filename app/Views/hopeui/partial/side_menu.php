@@ -83,29 +83,26 @@ $uri = service('uri');
             </a>
           </li>
 
-          <li><hr class="hr-horizontal"></li>
-          <li class="nav-item static-item">
-            <a class="nav-link static-item disabled" tabindex="-1">
-              <span class="default-icon">Data Produk</span>
-              <!-- <span class="mini-icon">-</span> -->
-            </a>
-          </li>
-
           <li class="nav-item">
             <a class="nav-link <?php if($uri->getSegment(1) == "produk"){echo "active";}?>" href="<?=base_url('produk')?>"><i class="fa-solid fa-books"></i><span class="item-name">Data Produk</span>
             </a>
           </li>
 
-          <li class="nav-item">
-            <a class="nav-link <?php if($uri->getSegment(1) == "penjualan"){echo "active";}?>" href="<?=base_url('penjualan')?>"><i class="fa-duotone fa-arrow-right-arrow-left"></i><span class="item-name">Data Penjualan</span>
-            </a>
-          </li>
-
           <li><hr class="hr-horizontal"></li>
           <li class="nav-item static-item">
             <a class="nav-link static-item disabled" tabindex="-1">
-              <span class="default-icon">Data Laporan</span>
+              <span class="default-icon">Data Transaksi</span>
               <!-- <span class="mini-icon">-</span> -->
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link <?php if($uri->getSegment(1) == "kasir"){echo "active";}?>" href="<?=base_url('kasir')?>"><i class="fa-regular fa-cash-register"></i><span class="item-name">Data Kasir</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link <?php if($uri->getSegment(1) == "penjualan"){echo "active";}?>" href="<?=base_url('penjualan')?>"><i class="fa-duotone fa-arrow-right-arrow-left"></i><span class="item-name">Data Penjualan</span>
             </a>
           </li>
 

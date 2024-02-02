@@ -31,7 +31,7 @@ class Penjualan extends BaseController
         }
     }
 
-    public function detail_penjualan($id)
+    public function menu_peminjaman($id)
     {
         if (session()->get('level') == 1 || session()->get('level') == 2) {
             $model=new M_penjualan();
