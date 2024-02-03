@@ -56,61 +56,50 @@
 <body>
     <div class="header">
         <img src="<?=base_url('logo/logo_pdf/logo_pdf_contoh.svg')?>"> 
-        <div class="judul mt-2">GT Library</div>
+        <div class="judul mt-2">GT Kasir</div>
         <div class="alamat">Jl. Raya Pahlawan No. 123, Kel. Sukajadi, Kec. Sukasari, Kota Batam 29424.</div>
         <div class="notel">Telp: (0778) 417852 Fax: (0778) 517523</div>
     </div>
 
     <h3 class="text-center mb-4"><?= $title ?></h3>
     
-    <p class="text-center">Laporan detail peminjaman buku per tanggal tertentu.</p>
+    <?php if ($awal && $akhir) : ?>
+        <p class="text-center">Laporan detail penjualan dalam rentang tanggal berikut:</p>
+        <p class="text-center">Periode : <?= date('d M Y', strtotime($awal)) . ' - ' . date('d M Y', strtotime($akhir))?></p>
+    <?php elseif ($tanggal) : ?>
+       <p class="text-center">Laporan detail penjualan pada tanggal berikut:</p>
+       <p class="text-center">Periode : <?= date('d M Y', strtotime($tanggal))?></p>
+   <?php endif; ?>
 
-    <div class="table-responsive">
-        <table border="1">
-            <thead>
+
+   <div class="table-responsive">
+    <table border="1">
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>Nama Produk</th>
+                <th>Jumlah Produk</th>
+                <th>Subtotal</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php $no = 1; foreach ($penjualan as $riz) { ?>
                 <tr>
-                    <th>No.</th>
-                    <th>Judul Buku</th>
-                    <th>Jumlah Pinjam</th>
-                    <th>Peminjam</th>
-                    <th>Tgl. Peminjaman</th>
-                    <th>Tgl. Pengembalian</th>
-                    <th>Status Peminjaman</th>
+                    <td><?= $no++ ?></td>
+                    <td><?= $riz->NamaProduk ?></td>
+                    <td><?= $riz->JumlahProduk ?> buah</td>
+                    <td>Rp <?= number_format($riz->Subtotal, 2, ',', '.') ?></td>
                 </tr>
-            </thead>
-            <tbody>
-                <?php $no = 1; foreach ($peminjaman as $riz) { ?>
-                    <tr>
-                        <td><?= $no++ ?></td>
-                        <td><?= $riz->judul_buku ?></td>
-                        <td><?= $riz->stok_buku_peminjaman ?> buah</td>
-                        <td><?= $riz->username ?></td>
-                        <td><?= date('d M Y', strtotime($riz->tgl_peminjaman)) ?></td>
-                        <td><?= date('d M Y', strtotime($riz->tgl_pengembalian)) ?></td>
-                        <td>
-                            <?php if ($riz->status_peminjaman == 1): ?>
-                                Dipinjam
-                            <?php elseif ($riz->status_peminjaman == 2): ?>
-                                Dikembalikan
-                            <?php endif; ?>
-                        </td>
-                    </tr>
-                <?php } ?>
-            </tbody>
-        </table>
-    </div>
+            <?php } ?>
+        </tbody>
+    </table>
+</div>
 
-    <div class="jumlah-container mt-5">
-        <div class="jumlah-item">
-            <p>Jumlah peminjaman: <?= count($peminjaman) ?></p>
-        </div>
-        <div class="jumlah-item">
-            <p>Jumlah status buku dipinjam: <?= $jumlah_dipinjam ?></p>
-        </div>
-        <div class="jumlah-item">
-            <p>Jumlah status buku dikembalikan: <?= $jumlah_dikembalikan ?></p>
-        </div>
+<div class="jumlah-container mt-5">
+    <div class="jumlah-item">
+        <p>Jumlah penjualan: <?= count($penjualan) ?></p>
     </div>
+</div>
 
 </div>
 </body>

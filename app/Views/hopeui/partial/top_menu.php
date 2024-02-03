@@ -47,7 +47,7 @@ $user = $db->table('user')->where('id_user', $id_user)->get()->getRow();
           </div>
           <!--logo End-->
 
-          <h4 class="logo-title">GT Library</h4>
+          <h4 class="logo-title">GT Kasir</h4>
         </a>
 
         <div class="sidebar-toggle" data-toggle="sidebar" data-active="true">

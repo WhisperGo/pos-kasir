@@ -31,7 +31,7 @@ $uri = service('uri');
       </div>
       <!--logo End-->
 
-      <h4 class="logo-title">GT POS</h4>
+      <h4 class="logo-title">GT Kasir</h4>
     </a>
     <div class="sidebar-toggle" data-toggle="sidebar" data-active="true">
       <i class="icon">
@@ -102,12 +102,12 @@ $uri = service('uri');
           </li>
 
           <li class="nav-item">
-            <a class="nav-link <?php if($uri->getSegment(1) == "penjualan"){echo "active";}?>" href="<?=base_url('penjualan')?>"><i class="fa-duotone fa-arrow-right-arrow-left"></i><span class="item-name">Data Penjualan</span>
+            <a class="nav-link <?php if($uri->getSegment(1) == "penjualan" && $uri->getSegment(2) !== "menu_laporan" || $uri->getSegment(1) == "detail_penjualan"){echo "active";}?>" href="<?=base_url('penjualan')?>"><i class="fa-duotone fa-arrow-right-arrow-left"></i><span class="item-name">Data Penjualan</span>
             </a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link <?php if($uri->getSegment(2) == "menu_laporan"){echo "active";}?>" href="<?=base_url('peminjaman/menu_laporan')?>"><i class="fa-light fa-file-invoice"></i><span class="item-name">Laporan Penjualan</span>
+            <a class="nav-link <?php if($uri->getSegment(2) == "menu_laporan"){echo "active";}?>" href="<?=base_url('penjualan/menu_laporan')?>"><i class="fa-light fa-file-invoice"></i><span class="item-name">Laporan Penjualan</span>
             </a>
           </li>
 

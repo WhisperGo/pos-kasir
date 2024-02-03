@@ -31,28 +31,6 @@ class Penjualan extends BaseController
         }
     }
 
-    public function detail_penjualan($id)
-    {
-        if (session()->get('level') == 1 || session()->get('level') == 2) {
-            $model=new M_penjualan();
-
-            // Mengambil data buku masuk berdasarkan id buku
-            $data['jojo'] = $model->getPeminjamanById($id);
-            $data['jojo2'] = $id;
-
-            $data['title'] = 'Data Peminjaman';
-            $data['desc'] = 'Anda dapat menambah Data Peminjaman di Menu ini.';      
-
-            echo view('hopeui/partial/header', $data);
-            echo view('hopeui/partial/side_menu');
-            echo view('hopeui/partial/top_menu');
-            echo view('hopeui/peminjaman/menu_peminjaman', $data);
-            echo view('hopeui/partial/footer');
-        }else {
-            return redirect()->to('/');
-        }
-    }
-
     public function create($id)
     {
         if (session()->get('level') == 1 || session()->get('level') == 2) {
@@ -143,14 +121,17 @@ class Penjualan extends BaseController
         if (session()->get('level') == 1 || session()->get('level') == 2) {
             $model=new M_penjualan();
 
-            $data['title'] = 'Laporan Peminjaman';
-            $data['desc'] = 'Anda dapat mengprint Data Peminjaman di Menu ini.';      
-            $data['subtitle'] = 'Print Laporan Peminjaman';      
+            $data['title'] = 'Laporan Penjualan';
+            $data['desc'] = 'Anda dapat mengprint Data Penjualan di Menu ini.';      
+            $data['subtitle'] = 'Print Laporan Penjualan';      
+
+            $data['bulan_list'] = $model->tampil('bulan');      
+            $data['tahun_list'] = $model->tampil('tahun');       
 
             echo view('hopeui/partial/header', $data);
             echo view('hopeui/partial/side_menu');
             echo view('hopeui/partial/top_menu');
-            echo view('hopeui/laporan_peminjaman/menu_laporan', $data);
+            echo view('hopeui/laporan_penjualan/menu_laporan', $data);
             echo view('hopeui/partial/footer');
         }else {
             return redirect()->to('/');
@@ -166,21 +147,18 @@ class Penjualan extends BaseController
             $akhir = $this->request->getPost('akhir');
 
             // Get data absensi kantor berdasarkan filter
-            $data['peminjaman'] = $model->getAllPeminjamanInRange($awal, $akhir);
+            $data['penjualan'] = $model->getAllPenjualanPeriode($awal, $akhir);
+            $data['awal'] = $awal;
+            $data['akhir'] = $akhir;
             
-            // Hitung jumlah peminjaman berdasarkan status
-            $data['jumlah_dipinjam'] = $model->countPeminjamanByStatus($awal, $akhir, 1); // Status Dipinjam
-            $data['jumlah_dikembalikan'] = $model->countPeminjamanByStatus($awal, $akhir, 2); // Status Dikembalikan
-
-            $data['title'] = 'Laporan Peminjaman Buku';
+            $data['title'] = 'Laporan Penjualan';
             echo view('hopeui/partial/header', $data);
-            echo view('hopeui/laporan_peminjaman/print_windows_view', $data);
+            echo view('hopeui/laporan_penjualan/print_windows_view', $data);
             echo view('hopeui/partial/footer_print');  
         } else {
             return redirect()->to('/');
         }
     }
-
 
     public function export_pdf()
     {
@@ -191,21 +169,21 @@ class Penjualan extends BaseController
             $akhir = $this->request->getPost('akhir');
 
             // Get data absensi kantor berdasarkan filter
-            $data['peminjaman'] = $model->getAllPeminjamanInRange($awal, $akhir);
-            $data['jumlah_dipinjam'] = $model->countPeminjamanByStatus($awal, $akhir, 1); 
-            $data['jumlah_dikembalikan'] = $model->countPeminjamanByStatus($awal, $akhir, 2); 
-
+            $data['penjualan'] = $model->getAllPenjualanPeriode($awal, $akhir);
+            $data['awal'] = $awal;
+            $data['akhir'] = $akhir;
+            
             // Load the dompdf library
             $dompdf = new Dompdf();
 
             // Set the HTML content for the PDF
-            $data['title'] = 'Laporan Peminjaman Buku';
-            $dompdf->loadHtml(view('hopeui/laporan_peminjaman/print_pdf_view',$data));
+            $data['title'] = 'Laporan Penjualan';
+            $dompdf->loadHtml(view('hopeui/laporan_penjualan/print_pdf_view',$data));
             $dompdf->setPaper('A4','landscape');
             $dompdf->render();
             
             // Generate file name with start and end date
-            $file_name = 'laporan_peminjaman_' . str_replace('-', '', $awal) . '_' . str_replace('-', '', $akhir) . '.pdf';
+            $file_name = 'laporan_penjualan_' . str_replace('-', '', $awal) . '_' . str_replace('-', '', $akhir) . '.pdf';
 
             // Output the generated PDF (inline or attachment)
             $dompdf->stream($file_name, ['Attachment' => 0]);
@@ -344,5 +322,60 @@ class Penjualan extends BaseController
         return redirect()->to('/');
     }
 }
+
+
+// --------------------------------- PRINT LAPORAN PER HARI -----------------------------------
+
+public function export_windows_per_hari()
+    {
+        if (session()->get('level') == 1 || session()->get('level') == 2) {
+            $model = new M_penjualan();
+
+            $tanggal = $this->request->getPost('tanggal');
+
+            // Get data penjualan berdasarkan tanggal
+            $data['penjualan'] = $model->getAllPenjualanPerHari($tanggal);
+            $data['tanggal'] = $tanggal;
+
+            $data['title'] = 'Laporan Penjualan';
+            echo view('hopeui/partial/header', $data);
+            echo view('hopeui/laporan_penjualan/print_windows_view', $data);
+            echo view('hopeui/partial/footer_print');
+        } else {
+            return redirect()->to('/');
+        }
+    }
+
+    public function export_pdf_per_hari()
+    {
+        if (session()->get('level') == 1 || session()->get('level') == 2) {
+            $model = new M_penjualan();
+
+            $tanggal = $this->request->getPost('tanggal');
+
+            // Get data penjualan berdasarkan tanggal
+            $data['penjualan'] = $model->getAllPenjualanPerHari($tanggal);
+            $data['tanggal'] = $tanggal;
+
+            // Load the dompdf library
+            $dompdf = new Dompdf();
+
+            // Set the HTML content for the PDF
+            $data['title'] = 'Laporan Penjualan';
+            $dompdf->loadHtml(view('hopeui/laporan_penjualan/print_pdf_view',$data));
+            $dompdf->setPaper('A4','landscape');
+            $dompdf->render();
+            
+            // Generate file name with start and end date
+            $file_name = 'laporan_penjualan_' . str_replace('-', '', $awal) . '_' . str_replace('-', '', $akhir) . '.pdf';
+
+            // Output the generated PDF (inline or attachment)
+            $dompdf->stream($file_name, ['Attachment' => 0]);
+        } else {
+            return redirect()->to('/');
+        }
+    }
+
+
 
 }

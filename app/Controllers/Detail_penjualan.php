@@ -12,43 +12,21 @@ class Detail_penjualan extends BaseController
     public function index($id)
     {
         if (session()->get('level') == 1 || session()->get('level') == 2) {
-            $model = new M_penjualan();
+            $model = new M_detail_penjualan();
 
-            $on='detailpenjualan.ProdukID = pelanggan.PelangganID';
-            $on2='detailpenjualan.user = user.id_user';
-            $data['jojo'] = $model->join3('detailpenjualan', 'pelanggan', 'user', $on, $on2);
+            $on='detailpenjualan.PenjualanID = penjualan.PenjualanID';
+            $on2='detailpenjualan.ProdukID = produk.ProdukID';
+            $data['jojo'] = $model->join3id('detailpenjualan', 'penjualan', 'produk', $on, $on2, $id);
 
-            $data['title'] = 'Data Penjualan';
-            $data['desc'] = 'Anda dapat melihat Data Penjualan di Menu ini.';
+            $data['title'] = 'Detail Penjualan';
+            $data['desc'] = 'Anda dapat melihat Detail Penjualan di Menu ini.';
 
             echo view('hopeui/partial/header', $data);
             echo view('hopeui/partial/side_menu');
             echo view('hopeui/partial/top_menu');
-            echo view('hopeui/penjualan/view', $data);
+            echo view('hopeui/detail_penjualan/view', $data);
             echo view('hopeui/partial/footer');
         } else {
-            return redirect()->to('/');
-        }
-    }
-
-    public function detail_penjualan($id)
-    {
-        if (session()->get('level') == 1 || session()->get('level') == 2) {
-            $model=new M_penjualan();
-
-            // Mengambil data buku masuk berdasarkan id buku
-            $data['jojo'] = $model->getPeminjamanById($id);
-            $data['jojo2'] = $id;
-
-            $data['title'] = 'Data Peminjaman';
-            $data['desc'] = 'Anda dapat menambah Data Peminjaman di Menu ini.';      
-
-            echo view('hopeui/partial/header', $data);
-            echo view('hopeui/partial/side_menu');
-            echo view('hopeui/partial/top_menu');
-            echo view('hopeui/peminjaman/menu_peminjaman', $data);
-            echo view('hopeui/partial/footer');
-        }else {
             return redirect()->to('/');
         }
     }
@@ -56,7 +34,7 @@ class Detail_penjualan extends BaseController
     public function create($id)
     {
         if (session()->get('level') == 1 || session()->get('level') == 2) {
-            $model=new M_penjualan();
+            $model=new M_detail_penjualan();
 
             $data['title'] = 'Data Peminjaman';
             $data['desc'] = 'Anda dapat menambah Data Peminjaman di Menu ini.';  
@@ -92,7 +70,7 @@ class Detail_penjualan extends BaseController
             );
 
             // Simpan data ke dalam database
-            $model = new M_penjualan();
+            $model = new M_detail_penjualan();
             $model->simpan('peminjaman', $data1);
 
             return redirect()->to('peminjaman');
@@ -111,7 +89,7 @@ class Detail_penjualan extends BaseController
             );
 
             $where = array('id_peminjaman' => $id);
-            $model = new M_penjualan();
+            $model = new M_detail_penjualan();
 
             $stok_keluar = $model->getBukuByIdPeminjaman($id);
             $id_buku = $stok_keluar->buku;
@@ -127,7 +105,7 @@ class Detail_penjualan extends BaseController
     public function delete($id)
     { 
         if(session()->get('level')== 1 || session()->get('level')== 2) {
-            $model=new M_penjualan();
+            $model=new M_detail_penjualan();
             $model->deletee($id);
             return redirect()->to('penjualan');
         }else {
@@ -141,7 +119,7 @@ class Detail_penjualan extends BaseController
     public function menu_laporan()
     {
         if (session()->get('level') == 1 || session()->get('level') == 2) {
-            $model=new M_penjualan();
+            $model=new M_detail_penjualan();
 
             $data['title'] = 'Laporan Peminjaman';
             $data['desc'] = 'Anda dapat mengprint Data Peminjaman di Menu ini.';      
@@ -160,7 +138,7 @@ class Detail_penjualan extends BaseController
     public function export_windows()
     {
         if (session()->get('level') == 1 || session()->get('level') == 2) {
-            $model = new M_penjualan();
+            $model = new M_detail_penjualan();
 
             $awal = $this->request->getPost('awal');
             $akhir = $this->request->getPost('akhir');
@@ -181,11 +159,10 @@ class Detail_penjualan extends BaseController
         }
     }
 
-
     public function export_pdf()
     {
         if (session()->get('level') == 1 || session()->get('level') == 2) {
-            $model = new M_penjualan();
+            $model = new M_detail_penjualan();
 
             $awal = $this->request->getPost('awal');
             $akhir = $this->request->getPost('akhir');
@@ -218,7 +195,7 @@ class Detail_penjualan extends BaseController
     public function export_excel()
     {
         if (session()->get('level') == 1 || session()->get('level') == 2) {
-            $model = new M_penjualan();
+            $model = new M_detail_penjualan();
 
             $awal = $this->request->getPost('awal');
             $akhir = $this->request->getPost('akhir');

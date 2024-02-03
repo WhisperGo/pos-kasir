@@ -31,7 +31,7 @@
                      </div>
                      <!--logo End-->
 
-                     <h4 class="logo-title ms-3">GT Point Of Sale</h4>
+                     <h4 class="logo-title ms-3">GT Kasir</h4>
                   </a>
                   <h2 class="mb-2 text-center">Sign In</h2>
                   <p class="text-center">Login to stay connected.</p>

@@ -60,6 +60,37 @@ class M_penjualan extends Model
 		->getResult();
 	}
 
+	// ---------------------------------------- PRINT LAPORAN ----------------------------------------
+
+	public function getAllPenjualanPeriode($tanggal_awal, $tanggal_akhir)
+	{
+		return $this->db->table('detailpenjualan')
+		->select('detailpenjualan.*, penjualan.*, produk.*') 
+    	// ->select('peminjaman.stok_buku AS stok_buku_peminjaman') 
+		->join('penjualan', 'detailpenjualan.PenjualanID = penjualan.PenjualanID')
+		->join('produk', 'detailpenjualan.ProdukID = produk.ProdukID')
+		->where('detailpenjualan.created_at >=', $tanggal_awal)
+		->where('detailpenjualan.created_at <=', $tanggal_akhir)
+		->where('detailpenjualan.deleted_at', null)
+		->orderBy('detailpenjualan.created_at', 'DESC')
+		->get()
+		->getResult();
+	}
+
+	public function getAllPenjualanPerHari($tanggal)
+	{
+		return $this->db->table('detailpenjualan')
+		->select('detailpenjualan.*, penjualan.*, produk.*')
+		->join('penjualan', 'detailpenjualan.PenjualanID = penjualan.PenjualanID')
+		->join('produk', 'detailpenjualan.ProdukID = produk.ProdukID')
+		->where('DATE(detailpenjualan.created_at)', $tanggal)
+		->where('detailpenjualan.deleted_at', null)
+		->orderBy('detailpenjualan.created_at', 'DESC')
+		->get()
+		->getResult();
+	}
+
+
 
 	//CI4 Model
 	public function deletee($id)
