@@ -1,0 +1,72 @@
+CRITICAL - 2024-02-04 00:09:41 --> syntax error, unexpected '->' (T_OBJECT_OPERATOR)
+#0 C:\xampp\htdocs\pos-kasir\system\Router\Router.php(175): CodeIgniter\Router\Router->autoRoute('penjualan/menu_...')
+#1 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(726): CodeIgniter\Router\Router->handle('penjualan/menu_...')
+#2 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\pos-kasir\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\pos-kasir\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2024-02-04 00:10:15 --> Class 'PhpOffice\PhpSpreadsheet\Spreadsheet' not found
+#0 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(832): App\Controllers\Penjualan->export_excel()
+#1 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+#2 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\pos-kasir\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\pos-kasir\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2024-02-04 00:11:30 --> Class 'PhpOffice\PhpSpreadsheet\Spreadsheet' not found
+#0 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(832): App\Controllers\Penjualan->export_excel()
+#1 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+#2 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\pos-kasir\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\pos-kasir\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2024-02-04 00:11:44 --> Invalid argument supplied for foreach()
+#0 C:\xampp\htdocs\pos-kasir\app\Controllers\Penjualan.php(230): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Invalid argumen...', 'C:\\xampp\\htdocs...', 230, Array)
+#1 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(832): App\Controllers\Penjualan->export_excel()
+#2 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+#3 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\pos-kasir\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\pos-kasir\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2024-02-04 00:36:24 --> Invalid cell coordinate G
+#0 C:\xampp\htdocs\pos-kasir\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Style\Style.php(229): PhpOffice\PhpSpreadsheet\Cell\Coordinate::coordinateFromString('G')
+#1 C:\xampp\htdocs\pos-kasir\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Style\Fill.php(199): PhpOffice\PhpSpreadsheet\Style\Style->applyFromArray(Array)
+#2 C:\xampp\htdocs\pos-kasir\app\Controllers\Penjualan.php(268): PhpOffice\PhpSpreadsheet\Style\Fill->setFillType('solid')
+#3 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(832): App\Controllers\Penjualan->export_excel()
+#4 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+#5 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\pos-kasir\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\pos-kasir\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2024-02-04 00:42:11 --> syntax error, unexpected '$sheet' (T_VARIABLE)
+#0 C:\xampp\htdocs\pos-kasir\system\Router\Router.php(175): CodeIgniter\Router\Router->autoRoute('penjualan/expor...')
+#1 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(726): CodeIgniter\Router\Router->handle('penjualan/expor...')
+#2 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\pos-kasir\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\pos-kasir\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2024-02-04 00:52:06 --> Class 'App\Controllers\NumberFormat' not found
+#0 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(832): App\Controllers\Penjualan->export_excel()
+#1 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+#2 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\pos-kasir\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\pos-kasir\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2024-02-04 00:52:41 --> Call to undefined method PhpOffice\PhpSpreadsheet\Style\Style::setNumberFormat()
+#0 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(832): App\Controllers\Penjualan->export_excel()
+#1 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+#2 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\pos-kasir\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\pos-kasir\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2024-02-04 00:58:06 --> Invalid cell coordinate D
+#0 C:\xampp\htdocs\pos-kasir\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Style\Style.php(229): PhpOffice\PhpSpreadsheet\Cell\Coordinate::coordinateFromString('D')
+#1 C:\xampp\htdocs\pos-kasir\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Style\NumberFormat.php(227): PhpOffice\PhpSpreadsheet\Style\Style->applyFromArray(Array)
+#2 C:\xampp\htdocs\pos-kasir\app\Controllers\Penjualan.php(263): PhpOffice\PhpSpreadsheet\Style\NumberFormat->setFormatCode('_("$"* #,##0.00...')
+#3 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(832): App\Controllers\Penjualan->export_excel()
+#4 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+#5 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\pos-kasir\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\pos-kasir\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}

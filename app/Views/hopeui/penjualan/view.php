@@ -31,7 +31,7 @@
                           <td>
                            <a href="<?php echo base_url('detail_penjualan/'. $riz->PenjualanID)?>" class="btn btn-success my-1"><i class="fa-regular fa-circle-info"></i></a>
                            <a href="<?php echo base_url('penjualan/delete/'. $riz->PenjualanID)?>" class="btn btn-danger my-1"><i class="fa-solid fa-trash"></i></a>
-                        </td>l
+                        </td>
                      </tr>
                   <?php } ?>
                </tbody>

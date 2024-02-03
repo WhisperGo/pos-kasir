@@ -80,6 +80,8 @@
                 <th>Nama Produk</th>
                 <th>Jumlah Produk</th>
                 <th>Subtotal</th>
+                <th>Kasir</th>
+                <th>Tanggal Penjualan</th>
             </tr>
         </thead>
         <tbody>
@@ -89,6 +91,8 @@
                     <td><?= $riz->NamaProduk ?></td>
                     <td><?= $riz->JumlahProduk ?> buah</td>
                     <td>Rp <?= number_format($riz->Subtotal, 2, ',', '.') ?></td>
+                    <td><?= $riz->username ?></td>
+                    <td><?= date('d F Y, H:i', strtotime($riz->created_at)) ?></td>
                 </tr>
             <?php } ?>
         </tbody>
