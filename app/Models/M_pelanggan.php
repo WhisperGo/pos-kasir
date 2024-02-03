@@ -39,6 +39,10 @@ class M_pelanggan extends Model
 		->get()
 		->getResult();
 	}
+	public function hitungsemua()
+	{
+		return $this->where('deleted_at', null)->countAllResults();
+	}
 
 	//CI4 Model
 	public function deletee($id)

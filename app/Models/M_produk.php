@@ -55,6 +55,10 @@ class M_produk extends Model
         ->get()
         ->getResult();
     }
+    public function hitungsemua()
+	{
+		return $this->where('deleted_at', null)->countAllResults();
+	}
 
     // ----------------------------------- STOK BUKU MASUK -------------------------------------
 
