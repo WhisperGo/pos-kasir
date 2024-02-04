@@ -13,7 +13,7 @@
                            <th>Total Harga</th>
                            <th>Tanggal Penjualan</th>
                            <th>Kasir</th>
-                           <th>Action</th>
+                           <th>Aksi</th>
                         </tr>
                      </thead>
 

@@ -19,7 +19,7 @@
                            <th>Cover Buku</th>
                            <th>Kategori Buku</th>
                            <th>Stok Buku</th>
-                           <th>Action</th>
+                           <th>Aksi</th>
                         </tr>
                      </thead>
 

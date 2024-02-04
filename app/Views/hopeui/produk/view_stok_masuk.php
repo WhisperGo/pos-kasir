@@ -20,7 +20,7 @@
                            <th>Tanggal Masuk</th>
                            <th>Waktu Masuk</th>
                            <th>User</th>
-                           <th>Action</th>
+                           <th>Aksi</th>
                         </tr>
                      </thead>
 

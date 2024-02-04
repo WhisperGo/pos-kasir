@@ -18,7 +18,7 @@
                            <th>Nama Produk</th>
                            <th>Harga</th>
                            <th>Stok</th>
-                           <th>Action</th>
+                           <th>Aksi</th>
                         </tr>
                      </thead>
 

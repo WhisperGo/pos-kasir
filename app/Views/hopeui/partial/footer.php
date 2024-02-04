@@ -232,5 +232,9 @@
 <script src="<?=base_url('assets/extensions/filepond/filepond.js')?>"></script>
 <script src="<?=base_url('assets/static/js/pages/filepond.js')?>"></script>
 
+<!-- Choices JS -->
+<script src="<?=base_url('assets/extensions/choices.js/public/assets/scripts/choices.js')?>"></script>
+<script src="<?=base_url('assets/static/js/pages/form-element-select.js')?>"></script>
+
 </body>
 </html>

@@ -18,7 +18,7 @@
                            <th>Foto</th>
                            <th>Username</th>
                            <th>Level</th>
-                           <th>Action</th>
+                           <th>Aksi</th>
                         </tr>
                      </thead>
 
