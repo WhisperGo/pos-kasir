@@ -5,6 +5,7 @@
             <div class="card-header d-flex justify-content-between">
                <div class="header-title">
                   <h4 class="card-title"><?=$subtitle?></h4>
+                  <small class="text-danger text-sm">* Data yang Wajib Diisi</small>
                </div>
             </div>
             <div class="card-body">
@@ -18,12 +19,12 @@
                         </div>
 
                         <div class="form-group">
-                           <label class="form-label" for="fname">Username</label>
+                           <label class="form-label" for="fname">Username <small class="text-danger text-sm">*</small></label>
                            <input type="text" class="form-control" id="username" name="username" placeholder="Masukkan Username" required>
                         </div>
 
                         <div class="form-group">
-                           <label for="password" class="form-label" style="flex: 1;">Password</label>
+                           <label for="password" class="form-label" style="flex: 1;">Password <small class="text-danger text-sm">*</small></label>
                             <div style="position: relative; flex: 1;">
                               <input type="password" class="form-control" id="password-input" placeholder="Masukkan Password" name="password" required>
                               <button type="button" class="btn btn-outline-primary" id="show-password-btn" style="position: absolute; right: 0; top: 50%; transform: translateY(-50%);">
@@ -33,7 +34,7 @@
                         </div>
 
                         <div class="form-group">
-                           <label class="form-label" for="fname">Level</label>
+                           <label class="form-label" for="fname">Level <small class="text-danger text-sm">*</small></label>
                            <select class="form-select" id="level" name="level" required>
                               <option>- Pilih -</option>
                               <?php 

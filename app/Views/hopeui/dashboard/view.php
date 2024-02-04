@@ -23,6 +23,9 @@
                         <h4 class="counter"><?= $jumlah_produk ?></h4>
                      </div>
                   </div>
+                  <div class="text-center">
+                     <a href="<?=base_url('produk')?>" class="btn btn-outline-primary rounded-pill mt-3">Detail Produk</a>
+                  </div>
                </div>
             </li>
 
@@ -37,6 +40,9 @@
                         <h4 class="counter"><?= $jumlah_pelanggan ?></h4>
                      </div>
                   </div>
+                  <div class="text-center">
+                     <a href="<?=base_url('pelanggan')?>" class="btn btn-outline-info rounded-pill mt-3">Detail Pelanggan</a>
+                  </div>
                </div>
             </li>
 
@@ -50,6 +56,9 @@
                         <p class="mb-2">Total Penjualan</p>
                         <h4 class="counter"><?= $jumlah_penjualan ?></h4>
                      </div>
+                  </div>
+                  <div class="text-center">
+                     <a href="<?=base_url('penjualan')?>" class="btn btn-outline-success rounded-pill mt-3">Detail Penjualan</a>
                   </div>
                </div>
             </li>

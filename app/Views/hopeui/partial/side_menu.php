@@ -84,7 +84,7 @@ $uri = service('uri');
           </li>
 
           <li class="nav-item">
-            <a class="nav-link <?php if($uri->getSegment(1) == "produk"){echo "active";}?>" href="<?=base_url('produk')?>"><i class="fa-solid fa-books"></i><span class="item-name">Data Produk</span>
+            <a class="nav-link <?php if($uri->getSegment(1) == "produk"){echo "active";}?>" href="<?=base_url('produk')?>"><i class="fa-regular fa-database"></i><span class="item-name">Data Produk</span>
             </a>
           </li>
 

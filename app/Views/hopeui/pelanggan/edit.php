@@ -5,6 +5,7 @@
             <div class="card-header d-flex justify-content-between">
                <div class="header-title">
                   <h4 class="card-title"><?=$subtitle?></h4>
+                  <small class="text-danger text-sm">* Biarkan Jika Tidak Diedit</small>
                </div>
             </div>
             <div class="card-body">

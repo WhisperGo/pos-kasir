@@ -5,6 +5,7 @@
             <div class="card-header d-flex justify-content-between">
                <div class="header-title">
                   <h4 class="card-title"><?=$subtitle?></h4>
+                  <small class="text-danger text-sm">* Biarkan Jika Tidak Diedit</small>
                </div>
             </div>
             <div class="card-body">
@@ -15,7 +16,7 @@
                         <input type="hidden" name="id" value="<?php echo $jojo->id_user ?>">
 
                         <div class="form-group" style="margin-bottom: 6px; margin-top: 6px;">
-                           <label for="Foto" class="form-label">Foto Profil (Opsional)</label>
+                           <label for="Foto" class="form-label">Foto Profil (Opsional) <small class="text-danger text-sm">*</small></label>
                            <input type="file" class="logo-perusahaan" id="foto_profil" name="foto_profil" accept="image/*">
                         </div>
                         <input type="hidden" name="old_foto" value="<?= $jojo->foto ?>">
@@ -27,7 +28,7 @@
                         </div>
 
                         <div class="form-group">
-                           <label class="form-label" for="fname">Username</label>
+                           <label class="form-label" for="fname">Username <small class="text-danger text-sm">*</small></label>
                            <input type="text" class="form-control" id="username" name="username" placeholder="Masukkan Username" value="<?php echo $jojo->username ?>" required>
                         </div>
 
@@ -42,7 +43,7 @@
                         </div> -->
 
                         <div class="form-group">
-                           <label class="form-label" for="fname">Level</label>
+                           <label class="form-label" for="fname">Level <small class="text-danger text-sm">*</small></label>
                            <select class="form-select" id="level" name="level" required>
                               <option>- Pilih -</option>
                               <?php 
