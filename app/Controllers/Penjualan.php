@@ -124,10 +124,7 @@ class Penjualan extends BaseController
 
             $data['title'] = 'Laporan Penjualan';
             $data['desc'] = 'Anda dapat mengprint Data Penjualan di Menu ini.';      
-            $data['subtitle'] = 'Print Laporan Penjualan';      
-
-            $data['bulan_list'] = $model->tampil('bulan');      
-            $data['tahun_list'] = $model->tampil('tahun');       
+            $data['subtitle'] = 'Print Laporan Penjualan';             
 
             echo view('hopeui/partial/header', $data);
             echo view('hopeui/partial/side_menu');

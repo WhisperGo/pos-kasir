@@ -119,3 +119,11 @@ ERROR - 2024-02-05 02:09:31 --> Column 'PenjualanID' cannot be null
 ERROR - 2024-02-05 02:12:15 --> Column 'PenjualanID' cannot be null
 ERROR - 2024-02-05 02:17:12 --> Column 'PenjualanID' cannot be null
 ERROR - 2024-02-05 02:21:12 --> Column 'PenjualanID' cannot be null
+ERROR - 2024-02-05 17:07:28 --> Column 'ProdukID' cannot be null
+ERROR - 2024-02-05 17:08:00 --> Column 'ProdukID' cannot be null
+ERROR - 2024-02-05 17:09:44 --> Column 'ProdukID' cannot be null
+ERROR - 2024-02-05 17:19:27 --> Column 'ProdukID' cannot be null
+ERROR - 2024-02-05 17:23:34 --> Column 'ProdukID' cannot be null
+ERROR - 2024-02-05 17:27:31 --> Column 'ProdukID' cannot be null
+ERROR - 2024-02-05 17:28:53 --> Column 'ProdukID' cannot be null
+ERROR - 2024-02-05 17:35:24 --> Column 'ProdukID' cannot be null

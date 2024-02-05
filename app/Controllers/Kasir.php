@@ -80,12 +80,13 @@ class Kasir extends BaseController
         if (session()->get('level') == 1 || session()->get('level') == 2) {
             $a = date('Y-m-d');
             $b = $this->request->getPost('pelanggan');
-            $dataFromTable = json_decode($this->request->getPost('data_table'), true);
+            $c = $this->request->getPost('total_harga');
 
         // Data yang akan disimpan
             $data1 = [
                 'TanggalPenjualan' => $a,
                 'PelangganID' => $b,
+                'TotalHarga' => $c,
                 'user' => session()->get('id'),
             ];
 
@@ -96,21 +97,22 @@ class Kasir extends BaseController
         // Ambil PenjualanID dari data yang baru saja disimpan
             $penjualanid = $model->insertID();
 
+            $dataFromTable = json_decode($this->request->getPost('data_table'), true);
             foreach ($dataFromTable as $item) {
                 $data2 = [
                     'PenjualanID' => $penjualanid,
-                // 'ProdukID' => $item['id_produk'],
-                'JumlahProduk' => $item['jumlah'], // Perhatikan perubahan indeks dari 'jumlah' menjadi 'Jumlah'
-                'Subtotal' => $item['subtotal'], // Perhatikan perubahan indeks dari 'subtotal' menjadi 'Subtotal'
-            ];
+                    'ProdukID' => $item['produk_id'],
+                    'JumlahProduk' => $item['jumlah'],
+                    'Subtotal' => $item['subtotal'],
+                ];
 
-            $model->simpan('detailpenjualan', $data2);
+                $model->simpan('detailpenjualan', $data2);
+            }
+
+            return redirect()->to('kasir');
+        } else {
+            return redirect()->to('/');
         }
-
-        return redirect()->to('penjualan');
-    } else {
-        return redirect()->to('/');
     }
-}
 
 }
