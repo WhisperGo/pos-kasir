@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 05 Feb 2024 pada 14.11
+-- Waktu pembuatan: 05 Feb 2024 pada 15.11
 -- Versi server: 10.4.24-MariaDB
 -- Versi PHP: 7.4.29
 
@@ -46,7 +46,9 @@ INSERT INTO `detailpenjualan` (`DetailID`, `PenjualanID`, `ProdukID`, `JumlahPro
 (1, 1, 1, 6, '15000.00', '2024-02-05 18:40:48', NULL, NULL),
 (2, 1, 3, 2, '15000.00', '2024-02-05 18:40:48', NULL, NULL),
 (3, 2, 2, 12, '33000.00', '2024-02-05 18:43:22', NULL, NULL),
-(4, 2, 1, 12, '30000.00', '2024-02-05 18:43:22', NULL, NULL);
+(4, 2, 1, 12, '30000.00', '2024-02-05 18:43:22', NULL, NULL),
+(5, 3, 6, 5, '50000.00', '2024-02-05 21:00:53', NULL, NULL),
+(6, 3, 3, 1, '7500.00', '2024-02-05 21:00:53', NULL, NULL);
 
 --
 -- Trigger `detailpenjualan`
@@ -133,8 +135,9 @@ CREATE TABLE `penjualan` (
 --
 
 INSERT INTO `penjualan` (`PenjualanID`, `TanggalPenjualan`, `TotalHarga`, `PelangganID`, `user`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, '2024-02-05', '30000.00', 1, 1, '2024-02-05 18:40:48', NULL, NULL),
-(2, '2024-02-05', '63000.00', 2, 1, '2024-02-05 18:43:22', NULL, NULL);
+(1, '2024-02-05', '30000.00', 1, 1, '2024-02-05 18:40:48', '2024-02-05 20:58:39', '2024-02-05 20:58:39'),
+(2, '2024-02-05', '63000.00', 2, 1, '2024-02-05 18:43:22', NULL, NULL),
+(3, '2024-02-05', '57500.00', 1, 1, '2024-02-05 21:00:53', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -159,9 +162,10 @@ CREATE TABLE `produk` (
 INSERT INTO `produk` (`ProdukID`, `NamaProduk`, `Harga`, `Stok`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (1, 'Pensil', '2500.00', 12, '2024-02-01 21:20:07', NULL, NULL),
 (2, 'Pena', '2750.00', 66, '2024-02-01 22:08:33', '2024-02-01 22:40:35', NULL),
-(3, 'Pensil Mekanik', '7500.00', 23, '2024-02-01 21:20:07', NULL, NULL),
+(3, 'Pensil Mekanik', '7500.00', 22, '2024-02-01 21:20:07', NULL, NULL),
 (4, 'HDD', '7500.00', 0, '2024-02-01 21:20:07', NULL, NULL),
-(5, 'SSD', '7500.00', 50, '2024-02-01 21:20:07', NULL, '2024-02-04 22:12:45');
+(5, 'SSD', '7500.00', 50, '2024-02-01 21:20:07', NULL, '2024-02-04 22:12:45'),
+(6, 'Roti', '10000.00', 15, '2024-02-05 20:56:10', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -226,7 +230,8 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id_user`, `username`, `password`, `level`, `foto`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (1, 'Admin', 'c4ca4238a0b923820dcc509a6f75849b', 1, 'default.png', '2024-01-22 22:26:01', NULL, NULL),
-(2, 'Dodi', 'c4ca4238a0b923820dcc509a6f75849b', 2, 'default.png', '2024-01-22 22:26:01', NULL, NULL);
+(2, 'Dodi', 'c4ca4238a0b923820dcc509a6f75849b', 2, 'default.png', '2024-01-22 22:26:01', NULL, NULL),
+(3, 'Tes1', 'c4ca4238a0b923820dcc509a6f75849b', 2, 'default.png', '2024-02-05 20:54:19', '2024-02-05 20:54:24', '2024-02-05 20:54:24');
 
 -- --------------------------------------------------------
 
@@ -318,7 +323,7 @@ ALTER TABLE `website`
 -- AUTO_INCREMENT untuk tabel `detailpenjualan`
 --
 ALTER TABLE `detailpenjualan`
-  MODIFY `DetailID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `DetailID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT untuk tabel `level`
@@ -336,25 +341,25 @@ ALTER TABLE `pelanggan`
 -- AUTO_INCREMENT untuk tabel `penjualan`
 --
 ALTER TABLE `penjualan`
-  MODIFY `PenjualanID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `PenjualanID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `produk`
 --
 ALTER TABLE `produk`
-  MODIFY `ProdukID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `ProdukID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT untuk tabel `produk_masuk`
 --
 ALTER TABLE `produk_masuk`
-  MODIFY `ProdukMasukID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `ProdukMasukID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `website`
