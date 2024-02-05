@@ -131,7 +131,8 @@ class User extends BaseController
             $data1 = array(
                 'username' => $a,
                 'level' => $c,
-                'foto' => $imageName
+                'foto' => $imageName,
+                'updated_at'=>date('Y-m-d H:i:s')
             );
 
             // Simpan data ke dalam database

@@ -109,7 +109,30 @@ class Kasir extends BaseController
                 $model->simpan('detailpenjualan', $data2);
             }
 
-            return redirect()->to('kasir');
+            return redirect()->to('detail_penjualan/' . $penjualanid);
+        } else {
+            return redirect()->to('/');
+        }
+    }
+
+    public function cetak_invoice($id)
+    {
+        if (session()->get('level') == 1 || session()->get('level') == 2) {
+            $model = new M_penjualan();
+            $model2 = new M_detail_penjualan();
+
+            $on='penjualan.PelangganID = pelanggan.PelangganID';
+            $on2='penjualan.user = user.id_user';
+            $data['jojo'] = $model2->join3id('penjualan', 'pelanggan', 'user', $on, $on2, $id);
+
+            $on='detailpenjualan.PenjualanID = penjualan.PenjualanID';
+            $on2='detailpenjualan.ProdukID = produk.ProdukID';
+            $data['jojo2'] = $model2->join3id('detailpenjualan', 'penjualan', 'produk', $on, $on2, $id);
+
+            $data['title'] = 'Invoice Belanja';
+            echo view('hopeui/partial/header', $data);
+            echo view('hopeui/kasir/invoice', $data);
+            echo view('hopeui/partial/footer_print');  
         } else {
             return redirect()->to('/');
         }

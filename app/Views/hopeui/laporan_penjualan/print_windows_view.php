@@ -14,7 +14,7 @@
         }
         .header {
             text-align: center;
-            margin-bottom: -60px;
+            margin-bottom: -140px;
             margin-top: 20px;
         }
         .header img {
@@ -56,9 +56,7 @@
 <body>
     <div class="header">
         <img src="<?=base_url('logo/logo_pdf/logo_pdf_contoh.svg')?>"> 
-        <div class="judul mt-2">GT Kasir</div>
-        <div class="alamat">Jl. Raya Pahlawan No. 123, Kel. Sukajadi, Kec. Sukasari, Kota Batam 29424.</div>
-        <div class="notel">Telp: (0778) 417852 Fax: (0778) 517523</div>
+        <h3 class="judul mt-2">GT Kasir</h3>
     </div>
 
     <h3 class="text-center mb-4"><?= $title ?></h3>
@@ -92,7 +90,7 @@
                     <td><?= $riz->JumlahProduk ?> buah</td>
                     <td>Rp <?= number_format($riz->Subtotal, 2, ',', '.') ?></td>
                     <td><?= $riz->username ?></td>
-                    <td><?= date('d F Y, H:i', strtotime($riz->created_at)) ?></td>
+                    <td><?= date('d F Y, H:i', strtotime($riz->created_at_detailpenjualan)) ?></td>
                 </tr>
             <?php } ?>
         </tbody>

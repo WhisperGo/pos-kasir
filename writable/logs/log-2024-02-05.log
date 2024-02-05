@@ -127,3 +127,116 @@ ERROR - 2024-02-05 17:23:34 --> Column 'ProdukID' cannot be null
 ERROR - 2024-02-05 17:27:31 --> Column 'ProdukID' cannot be null
 ERROR - 2024-02-05 17:28:53 --> Column 'ProdukID' cannot be null
 ERROR - 2024-02-05 17:35:24 --> Column 'ProdukID' cannot be null
+ERROR - 2024-02-05 18:50:16 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'IS NULL
+AND `detailpenjualan`.`created_at` < IS NULL
+AND `detailpenjualan`.`d...' at line 6
+CRITICAL - 2024-02-05 18:50:16 --> Call to a member function getResult() on bool
+#0 C:\xampp\htdocs\pos-kasir\app\Controllers\Kasir.php(124): App\Models\M_penjualan->getAllPenjualanPeriode(NULL, NULL)
+#1 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(832): App\Controllers\Kasir->cetak_invoice('2')
+#2 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kasir))
+#3 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\pos-kasir\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\pos-kasir\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+ERROR - 2024-02-05 18:50:32 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'IS NULL
+AND `detailpenjualan`.`created_at` < IS NULL
+AND `detailpenjualan`.`d...' at line 6
+CRITICAL - 2024-02-05 18:50:32 --> Call to a member function getResult() on bool
+#0 C:\xampp\htdocs\pos-kasir\app\Controllers\Kasir.php(124): App\Models\M_penjualan->getAllPenjualanPeriode(NULL, NULL)
+#1 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(832): App\Controllers\Kasir->cetak_invoice('2')
+#2 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kasir))
+#3 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\pos-kasir\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\pos-kasir\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2024-02-05 19:18:03 --> syntax error, unexpected '?'
+#0 C:\xampp\htdocs\pos-kasir\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#1 C:\xampp\htdocs\pos-kasir\system\Common.php(1089): CodeIgniter\View\View->render('hopeui/kasir/in...', Array, true)
+#2 C:\xampp\htdocs\pos-kasir\app\Controllers\Kasir.php(134): view('hopeui/kasir/in...', Array)
+#3 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(832): App\Controllers\Kasir->cetak_invoice('2')
+#4 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kasir))
+#5 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\pos-kasir\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\pos-kasir\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2024-02-05 19:18:11 --> syntax error, unexpected 'number_format' (T_STRING), expecting ';' or ','
+#0 C:\xampp\htdocs\pos-kasir\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#1 C:\xampp\htdocs\pos-kasir\system\Common.php(1089): CodeIgniter\View\View->render('hopeui/kasir/in...', Array, true)
+#2 C:\xampp\htdocs\pos-kasir\app\Controllers\Kasir.php(134): view('hopeui/kasir/in...', Array)
+#3 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(832): App\Controllers\Kasir->cetak_invoice('2')
+#4 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kasir))
+#5 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\pos-kasir\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\pos-kasir\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2024-02-05 19:43:52 --> Invalid file: partial/header_datatable.php
+#0 C:\xampp\htdocs\pos-kasir\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('partial/header_...')
+#1 C:\xampp\htdocs\pos-kasir\system\Common.php(1089): CodeIgniter\View\View->render('partial/header_...', Array, true)
+#2 C:\xampp\htdocs\pos-kasir\app\Controllers\Data_level.php(15): view('partial/header_...', Array)
+#3 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(832): App\Controllers\Data_level->index()
+#4 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Data_level))
+#5 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\pos-kasir\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\pos-kasir\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2024-02-05 19:44:28 --> Invalid file: partial/header_datatable.php
+#0 C:\xampp\htdocs\pos-kasir\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('partial/header_...')
+#1 C:\xampp\htdocs\pos-kasir\system\Common.php(1089): CodeIgniter\View\View->render('partial/header_...', Array, true)
+#2 C:\xampp\htdocs\pos-kasir\app\Controllers\Data_level.php(15): view('partial/header_...', Array)
+#3 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(832): App\Controllers\Data_level->index()
+#4 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Data_level))
+#5 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\pos-kasir\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\pos-kasir\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2024-02-05 19:48:56 --> Invalid argument supplied for foreach()
+#0 C:\xampp\htdocs\pos-kasir\app\Views\hopeui\user\create.php(41): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Invalid argumen...', 'C:\\xampp\\htdocs...', 41, Array)
+#1 C:\xampp\htdocs\pos-kasir\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\pos-kasir\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\pos-kasir\system\Common.php(1089): CodeIgniter\View\View->render('hopeui/user/cre...', Array, true)
+#4 C:\xampp\htdocs\pos-kasir\app\Controllers\Data_level.php(39): view('hopeui/user/cre...', Array)
+#5 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(832): App\Controllers\Data_level->create()
+#6 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Data_level))
+#7 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\pos-kasir\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\pos-kasir\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2024-02-05 19:49:46 --> Invalid argument supplied for foreach()
+#0 C:\xampp\htdocs\pos-kasir\app\Views\hopeui\user\create.php(41): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Invalid argumen...', 'C:\\xampp\\htdocs...', 41, Array)
+#1 C:\xampp\htdocs\pos-kasir\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\pos-kasir\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\pos-kasir\system\Common.php(1089): CodeIgniter\View\View->render('hopeui/user/cre...', Array, true)
+#4 C:\xampp\htdocs\pos-kasir\app\Controllers\Data_level.php(39): view('hopeui/user/cre...', Array)
+#5 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(832): App\Controllers\Data_level->create()
+#6 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Data_level))
+#7 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\pos-kasir\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\pos-kasir\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+ERROR - 2024-02-05 19:51:02 --> Column 'nama_level' cannot be null
+CRITICAL - 2024-02-05 19:51:24 --> Invalid file: partial/header_datatable.php
+#0 C:\xampp\htdocs\pos-kasir\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('partial/header_...')
+#1 C:\xampp\htdocs\pos-kasir\system\Common.php(1089): CodeIgniter\View\View->render('partial/header_...', Array, true)
+#2 C:\xampp\htdocs\pos-kasir\app\Controllers\Data_level.php(72): view('partial/header_...', Array)
+#3 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(832): App\Controllers\Data_level->edit('3')
+#4 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Data_level))
+#5 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\pos-kasir\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\pos-kasir\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2024-02-05 19:55:54 --> syntax error, unexpected end of file, expecting function (T_FUNCTION) or const (T_CONST)
+#0 C:\xampp\htdocs\pos-kasir\system\Router\Router.php(175): CodeIgniter\Router\Router->autoRoute('data_level/aksi...')
+#1 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(726): CodeIgniter\Router\Router->handle('data_level/aksi...')
+#2 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\pos-kasir\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\pos-kasir\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2024-02-05 19:55:56 --> syntax error, unexpected end of file, expecting function (T_FUNCTION) or const (T_CONST)
+#0 C:\xampp\htdocs\pos-kasir\system\Router\Router.php(175): CodeIgniter\Router\Router->autoRoute('data_level/edit...')
+#1 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(726): CodeIgniter\Router\Router->handle('data_level/edit...')
+#2 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\pos-kasir\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\pos-kasir\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\pos-kasir\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}

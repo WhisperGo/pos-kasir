@@ -239,7 +239,7 @@ class Penjualan extends BaseController
                 // Mengisi sel dengan nilai yang diformat sebagai accounting
                 $sheet->setCellValueByColumnAndRow(4, $row, $subtotal);
                 $sheet->setCellValueByColumnAndRow(5, $row, $riz->username);
-                $sheet->setCellValueByColumnAndRow(6, $row, date('d F Y, H:i', strtotime($riz->created_at)));
+                $sheet->setCellValueByColumnAndRow(6, $row, date('d F Y, H:i', strtotime($riz->created_at_detailpenjualan)));
 
                 $row++;
             }
@@ -407,7 +407,7 @@ public function export_excel_per_hari()
                 // Mengisi sel dengan nilai yang diformat sebagai accounting
             $sheet->setCellValueByColumnAndRow(4, $row, $subtotal);
             $sheet->setCellValueByColumnAndRow(5, $row, $riz->username);
-            $sheet->setCellValueByColumnAndRow(6, $row, date('d F Y, H:i', strtotime($riz->created_at)));
+            $sheet->setCellValueByColumnAndRow(6, $row, date('d F Y, H:i', strtotime($riz->created_at_detailpenjualan)));
 
             $row++;
         }

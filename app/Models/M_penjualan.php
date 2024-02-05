@@ -66,7 +66,7 @@ class M_penjualan extends Model
 	{
 		return $this->db->table('detailpenjualan')
 		->select('detailpenjualan.*, penjualan.*, produk.*, user.*') 
-    	// ->select('peminjaman.stok_buku AS stok_buku_peminjaman') 
+    	->select('detailpenjualan.created_at AS created_at_detailpenjualan')
 		->join('penjualan', 'detailpenjualan.PenjualanID = penjualan.PenjualanID')
 		->join('produk', 'detailpenjualan.ProdukID = produk.ProdukID')
 		->join('user', 'penjualan.user = user.id_user')
@@ -81,7 +81,8 @@ class M_penjualan extends Model
 	public function getAllPenjualanPerHari($tanggal)
 	{
 		return $this->db->table('detailpenjualan')
-		->select('detailpenjualan.*, penjualan.*, produk.*, user.*') 
+		->select('detailpenjualan.*, penjualan.*, produk.*, user.*')
+		->select('detailpenjualan.created_at AS created_at_detailpenjualan') 
 		->join('penjualan', 'detailpenjualan.PenjualanID = penjualan.PenjualanID')
 		->join('produk', 'detailpenjualan.ProdukID = produk.ProdukID')
 		->join('user', 'penjualan.user = user.id_user')

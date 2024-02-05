@@ -103,7 +103,8 @@ class Produk extends BaseController
             $data1 = array(
                 'NamaProduk' => $a,
                 'Harga' => $b,
-                'Stok' => $c
+                'Stok' => $c,
+                'updated_at'=>date('Y-m-d H:i:s')
             );
 
             $where = array('ProdukID' => $id);
@@ -218,61 +219,4 @@ class Produk extends BaseController
             return redirect()->to('/');
         }
     }
-
-    // -------------------------------------- PEMINJAM --------------------------------------------
-
-public function peminjam()
-{
-    if (session()->get('level') == 3) {
-        $model = new M_produk(); // Gunakan model M_produk
-
-        $idUser = session()->get('id');
-
-        $on = 'produk.kategori_produk=kategori_produk.id_kategori';
-        $data['jojo'] = $model->join2('produk', 'kategori_produk', $on); // Ubah cara Anda mengambil data sesuai kebutuhan
-
-        // Tambahkan informasi apakah produk disukai atau tidak ke dalam data yang akan dikirimkan ke view
-        foreach ($data['jojo'] as $riz) {
-            $riz->isLiked = $model->isLiked($riz->id_produk, $idUser);
-        }
-
-        $data['title'] = 'Data Produk';
-        $data['desc'] = 'Anda dapat melihat Data Produk di Menu ini.';
-
-        echo view('hopeui/partial/header', $data);
-        echo view('hopeui/partial/side_menu');
-        echo view('hopeui/partial/top_menu');
-        echo view('hopeui/produk/view_peminjam', $data);
-        echo view('hopeui/partial/footer');
-    } else {
-        return redirect()->to('/');
-    }
-}
-
-public function aksi_tambah_koleksi($id)
-{ 
-    if(session()->get('level') == 3) {
-        $model = new M_produk();
-
-        $idUser = session()->get('id');
-
-            // Periksa apakah produk sudah ada dalam koleksi pengguna atau belum
-        if (!$model->isLiked($id, $idUser)) {
-            // Jika belum, tambahkan produk ke dalam koleksi
-            $data1 = array(
-                'produk' => $id,
-                'user' => $idUser
-            );
-            $model->simpan('koleksi_produk', $data1);
-        } else {
-            // Jika sudah, hapus produk dari koleksi
-            $model->hapusLike($id, $idUser);
-        }
-
-        // Arahkan pengguna kembali ke halaman koleksi produk
-        return redirect()->to('produk/peminjam');
-    } else {
-        return redirect()->to('/');
-    }
-}
 }

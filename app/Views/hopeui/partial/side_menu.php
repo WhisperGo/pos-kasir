@@ -84,6 +84,11 @@ $uri = service('uri');
           </li>
 
           <li class="nav-item">
+            <a class="nav-link <?php if($uri->getSegment(1) == "data_level"){echo "active";}?>" href="<?=base_url('data_level')?>"><i class="fa-regular fa-layer-group"></i></i><span class="item-name">Data Level</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
             <a class="nav-link <?php if($uri->getSegment(1) == "produk"){echo "active";}?>" href="<?=base_url('produk')?>"><i class="fa-regular fa-database"></i><span class="item-name">Data Produk</span>
             </a>
           </li>
@@ -145,36 +150,36 @@ $uri = service('uri');
         <li><hr class="hr-horizontal"></li>
         <li class="nav-item static-item">
           <a class="nav-link static-item disabled" tabindex="-1">
-            <span class="default-icon">Data Perpustakaan</span>
+            <span class="default-icon">Data Master</span>
             <!-- <span class="mini-icon">-</span> -->
           </a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link <?php if($uri->getSegment(1) == "buku"){echo "active";}?>" href="<?=base_url('buku')?>"><i class="fa-solid fa-books"></i><span class="item-name">Data Buku</span>
-          </a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link <?php if($uri->getSegment(1) == "buku_digital"){echo "active";}?>" href="<?=base_url('buku_digital')?>"><i class="fa-regular fa-book"></i><span class="item-name">Data Buku Digital</span>
-          </a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link <?php if($uri->getSegment(1) == "peminjaman" && $uri->getSegment(2) !== "menu_laporan"){echo "active";}?>" href="<?=base_url('peminjaman')?>"><i class="fa-duotone fa-arrow-right-arrow-left"></i><span class="item-name">Data Peminjaman</span>
+          <a class="nav-link <?php if($uri->getSegment(1) == "produk"){echo "active";}?>" href="<?=base_url('produk')?>"><i class="fa-regular fa-database"></i><span class="item-name">Data Produk</span>
           </a>
         </li>
 
         <li><hr class="hr-horizontal"></li>
         <li class="nav-item static-item">
           <a class="nav-link static-item disabled" tabindex="-1">
-            <span class="default-icon">Data Laporan</span>
+            <span class="default-icon">Data Transaksi</span>
             <!-- <span class="mini-icon">-</span> -->
           </a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link <?php if($uri->getSegment(2) == "menu_laporan"){echo "active";}?>" href="<?=base_url('peminjaman/menu_laporan')?>"><i class="fa-light fa-file-invoice"></i><span class="item-name">Laporan Peminjaman</span>
+          <a class="nav-link <?php if($uri->getSegment(1) == "kasir"){echo "active";}?>" href="<?=base_url('kasir')?>"><i class="fa-regular fa-cash-register"></i><span class="item-name">Kasir Penjualan</span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link <?php if($uri->getSegment(1) == "penjualan" && $uri->getSegment(2) !== "menu_laporan" || $uri->getSegment(1) == "detail_penjualan"){echo "active";}?>" href="<?=base_url('penjualan')?>"><i class="fa-duotone fa-arrow-right-arrow-left"></i><span class="item-name">Data Penjualan</span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link <?php if($uri->getSegment(2) == "menu_laporan"){echo "active";}?>" href="<?=base_url('penjualan/menu_laporan')?>"><i class="fa-light fa-file-invoice"></i><span class="item-name">Laporan Penjualan</span>
           </a>
         </li>
 
@@ -186,5 +191,6 @@ $uri = service('uri');
   </ul>
 </div>
 </div>
+
 
 <?php } ?>

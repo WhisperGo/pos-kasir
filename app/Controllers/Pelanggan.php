@@ -101,7 +101,8 @@ class Pelanggan extends BaseController
             $data1 = array(
                 'NamaPelanggan' => $a,
                 'Alamat' => $b,
-                'NomorTelepon' => $c
+                'NomorTelepon' => $c,
+                'updated_at'=>date('Y-m-d H:i:s')
             );
 
             // Simpan data ke dalam database
